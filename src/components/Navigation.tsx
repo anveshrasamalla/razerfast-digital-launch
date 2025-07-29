@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import razerfastLogo from "@/assets/razerfast-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,41 +30,39 @@ const Navigation = () => {
   const isActivePath = (path: string) => location.pathname === path;
 
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled 
-        ? "bg-background/95 backdrop-blur-lg border-b border-border shadow-elegant" 
-        : "bg-transparent"
-    )}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link 
             to="/" 
-            className="text-2xl font-bold text-foreground hover:text-tech-accent transition-colors duration-300"
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300"
           >
-            Razerfast
+            <img 
+              src={razerfastLogo} 
+              alt="Razerfast" 
+              className="h-8 w-auto"
+            />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={cn(
-                  "text-sm font-medium transition-colors duration-300 relative",
-                  isActivePath(item.path)
-                    ? "text-tech-accent"
-                    : "text-foreground hover:text-tech-accent"
-                )}
-              >
-                {item.name}
-                {isActivePath(item.path) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-tech-accent rounded-full" />
-                )}
-              </Link>
-            ))}
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center justify-center flex-1">
+            <div className="flex items-center space-x-2 bg-gray-50 rounded-full px-4 py-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={cn(
+                    "px-4 py-2 text-sm font-medium rounded-full transition-all duration-300",
+                    isActivePath(item.path)
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* CTA Button */}
@@ -87,17 +86,17 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-background/95 backdrop-blur-lg border-t border-border">
+          <div className="lg:hidden bg-white border-t border-gray-100">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   className={cn(
-                    "block px-3 py-2 text-base font-medium transition-colors duration-300",
+                    "block px-3 py-2 text-base font-medium transition-colors duration-300 rounded-lg",
                     isActivePath(item.path)
-                      ? "text-tech-accent bg-tech-accent/10"
-                      : "text-foreground hover:text-tech-accent hover:bg-tech-accent/5"
+                      ? "text-white bg-gray-900"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
