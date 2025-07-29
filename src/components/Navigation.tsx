@@ -47,16 +47,16 @@ const Navigation = () => {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-2 bg-gray-50 rounded-full px-4 py-2">
+            <div className="flex items-center space-x-1 bg-gray-100 rounded-full px-2 py-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   className={cn(
-                    "px-4 py-2 text-sm font-medium rounded-full transition-all duration-300",
+                    "px-5 py-2.5 text-sm font-medium rounded-full transition-all duration-300",
                     isActivePath(item.path)
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                      ? "bg-gray-900 text-white shadow-sm"
+                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-200/50"
                   )}
                 >
                   {item.name}
