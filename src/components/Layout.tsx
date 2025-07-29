@@ -45,7 +45,7 @@ const Layout = ({ children }: LayoutProps) => {
                       "px-6 py-3 text-sm font-medium rounded-full transition-all duration-300",
                       isActivePath(item.path)
                         ? "bg-gray-700 text-white shadow-sm"
-                        : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
+                        : "text-gray-700 hover:bg-gray-700 hover:text-white"
                     )}
                   >
                     {item.name}
