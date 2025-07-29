@@ -45,32 +45,34 @@ const Navigation = () => {
             />
           </Link>
 
-          {/* Desktop Navigation - Centered */}
+          {/* Desktop Navigation - Humaan Style */}
           <div className="hidden lg:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-1 bg-gray-100 rounded-full px-2 py-2 shadow-sm">{/* Force rebuild */}
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={cn(
-                    "px-5 py-2.5 text-sm font-medium rounded-full transition-all duration-300",
-                    isActivePath(item.path)
-                      ? "bg-gray-900 text-white shadow-sm"
-                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-200/50"
-                  )}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+            <nav className="relative">
+              <ul className="flex items-center space-x-1 bg-gray-100 rounded-full px-2 py-2">
+                {navItems.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.path}
+                      className={cn(
+                        "px-5 py-2.5 text-sm font-medium rounded-full transition-all duration-300 relative z-10",
+                        isActivePath(item.path)
+                          ? "bg-gray-900 text-white shadow-sm"
+                          : "text-gray-700 hover:text-gray-900 hover:bg-gray-200/50"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex">
-            <Button variant="cta" size="lg" className="group">
-              Request Quote
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
+          {/* Right Side - Green Circle like Humaan's face */}
+          <div className="hidden lg:flex items-center">
+            <div className="w-10 h-10 bg-tech-accent rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 bg-white rounded-full"></div>
+            </div>
           </div>
 
           {/* Mobile menu button */}
