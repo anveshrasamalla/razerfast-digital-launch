@@ -47,7 +47,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-1 bg-gray-100 rounded-full px-2 py-2">
+            <div className="flex items-center space-x-1 bg-gray-100 rounded-full px-2 py-2 shadow-sm">{/* Force rebuild */}
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -93,10 +93,10 @@ const Navigation = () => {
                   key={item.name}
                   to={item.path}
                   className={cn(
-                    "block px-3 py-2 text-base font-medium transition-colors duration-300 rounded-lg",
+                    "block px-4 py-3 text-base font-medium transition-colors duration-300 rounded-lg mx-2",
                     isActivePath(item.path)
                       ? "text-white bg-gray-900"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
