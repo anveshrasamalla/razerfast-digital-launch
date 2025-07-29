@@ -9,24 +9,24 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base Colors - Light mode with dark undertones */
-    --background: 0 0% 98%;
-    --foreground: 220 15% 8%;
+    /* Base Colors - Humaan-inspired beige/cream theme */
+    --background: 39 33% 95%;
+    --foreground: 25 25% 15%;
 
     /* Card & Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 8%;
+    --card-foreground: 25 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 8%;
+    --popover-foreground: 25 25% 15%;
 
-    /* Brand Primary - Deep professional blue-gray */
-    --primary: 220 30% 12%;
+    /* Brand Primary - Deep charcoal like Humaan */
+    --primary: 25 25% 15%;
     --primary-foreground: 0 0% 98%;
     
-    /* Tech Accent - Electric blue for CTAs and highlights */
-    --tech-accent: 210 100% 56%;
-    --tech-accent-foreground: 0 0% 98%;
+    /* Tech Accent - Bright green like your logo */
+    --tech-accent: 120 100% 50%;
+    --tech-accent-foreground: 25 25% 15%;
 
     /* Secondary - Sophisticated gray */
     --secondary: 220 8% 92%;
