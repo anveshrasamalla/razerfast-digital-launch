@@ -124,6 +124,38 @@ export default {
 				'glow': {
 					'0%, 100%': { opacity: '0.5' },
 					'50%': { opacity: '1' }
+				},
+				'text-reveal': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(100%)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0%)'
+					}
+				},
+				'word-fade': {
+					'0%': { 
+						opacity: '0',
+						filter: 'blur(10px)',
+						transform: 'translateY(20px) scale(0.8)'
+					},
+					'100%': { 
+						opacity: '1',
+						filter: 'blur(0px)',
+						transform: 'translateY(0px) scale(1)'
+					}
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
@@ -132,7 +164,10 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
 				'float': 'float 3s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite'
+				'glow': 'glow 2s ease-in-out infinite',
+				'fade-in-up': 'fade-in-up 0.8s ease-out',
+				'text-reveal': 'text-reveal 0.8s ease-out forwards',
+				'word-fade': 'word-fade 0.6s ease-out forwards'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',

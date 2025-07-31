@@ -21,27 +21,42 @@ const Index = () => {
       {/* Hero Section - Humaan Style */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-12">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight">
-              Extraordinary
-            </h1>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight">
-              Digital Experiences
-            </h1>
+          <div className="mb-12 overflow-hidden">
+            <div className="animate-text-reveal opacity-0" style={{ animationDelay: '0.2s' }}>
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
+                <span className="inline-block animate-word-fade opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '0.4s' }}>
+                  Extraordinary
+                </span>
+              </h1>
+            </div>
+            <div className="animate-text-reveal opacity-0" style={{ animationDelay: '0.6s' }}>
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
+                <span className="inline-block animate-word-fade opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '0.8s' }}>
+                  Digital
+                </span>{" "}
+                <span className="inline-block animate-word-fade opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '1.0s' }}>
+                  Experiences
+                </span>
+              </h1>
+            </div>
           </div>
           
-          <div className="max-w-2xl mx-auto mb-16">
+          <div className="max-w-2xl mx-auto mb-16 animate-fade-in-up opacity-0" style={{ animationDelay: '1.2s' }}>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              We design, build and ship world-class digital products for forward-thinking local businesses.
+              We design, build and ship{" "}
+              <span className="hover:text-tech-accent transition-colors duration-300 cursor-default">world-class</span>{" "}
+              digital products for{" "}
+              <span className="hover:text-tech-accent transition-colors duration-300 cursor-default">forward-thinking</span>{" "}
+              local businesses.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button variant="default" size="lg" className="group text-lg px-8 py-6">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up opacity-0" style={{ animationDelay: '1.4s' }}>
+            <Button variant="default" size="lg" className="group text-lg px-8 py-6 hover:scale-105 transition-all duration-300">
               Start Your Project
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
-            <Button variant="ghost" size="lg" className="group text-lg px-8 py-6">
+            <Button variant="ghost" size="lg" className="group text-lg px-8 py-6 hover:scale-105 transition-all duration-300">
               <Play className="w-5 h-5 mr-2" />
               See Our Work
             </Button>
