@@ -191,74 +191,95 @@ const Portfolio = () => {
 
             {industries.map((industry) => (
               <TabsContent key={industry.id} value={industry.id} className="mt-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filterProjects(industry.id).map((project) => (
-                    <Card key={project.id} className="group hover:shadow-tech transition-all duration-300 hover:-translate-y-2 overflow-hidden">
-                      <div className="aspect-video overflow-hidden">
-                        <img 
-                          src={project.image} 
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      
-                      <CardHeader>
-                        <div className="flex items-center justify-between mb-2">
-                          <Badge variant="secondary">{project.year}</Badge>
-                          <Badge variant="outline">{project.timeline}</Badge>
+                <div className="space-y-16">
+                  {filterProjects(industry.id).map((project, index) => (
+                    <div key={project.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                      {/* Project Details */}
+                      <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                        <div className="space-y-2">
+                          <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase">
+                            {project.category.toUpperCase()} PROJECT
+                          </div>
+                          <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
+                            <span className="relative inline-block">
+                              {project.title.split(' ').map((word, wordIndex) => (
+                                <span key={wordIndex} className="relative">
+                                  {word}
+                                  {wordIndex === 0 && (
+                                    <span className="absolute bottom-0 left-0 w-full h-1 bg-tech-accent transform scale-x-100"></span>
+                                  )}
+                                  {wordIndex < project.title.split(' ').length - 1 && ' '}
+                                </span>
+                              ))}
+                            </span>
+                          </h3>
+                          <p className="text-lg text-muted-foreground leading-relaxed">
+                            {project.description}
+                          </p>
                         </div>
-                        <CardTitle className="text-xl group-hover:text-tech-accent transition-colors duration-300">
-                          {project.title}
-                        </CardTitle>
-                        <CardDescription className="text-sm">
-                          {project.description}
-                        </CardDescription>
-                      </CardHeader>
 
-                      <CardContent className="space-y-4">
-                        {/* Services */}
-                        <div>
-                          <h4 className="font-semibold text-sm mb-2">Services Provided:</h4>
-                          <div className="flex flex-wrap gap-1">
-                            {project.services.map((service, idx) => (
-                              <Badge key={idx} variant="outline" className="text-xs">
-                                {service}
-                              </Badge>
-                            ))}
+                        {/* Key Metrics */}
+                        <div className="space-y-3">
+                          {Object.entries(project.results).map(([key, value], idx) => (
+                            <div key={idx} className="flex items-center space-x-4">
+                              <div className="w-2 h-2 bg-tech-accent rounded-full"></div>
+                              <span className="text-lg font-semibold text-tech-accent">{value}</span>
+                              <span className="text-muted-foreground capitalize">increase in {key}</span>
+                            </div>
+                          ))}
+                          <div className="flex items-center space-x-4">
+                            <div className="w-2 h-2 bg-tech-accent rounded-full"></div>
+                            <span className="text-lg font-semibold text-tech-accent">{project.timeline}</span>
+                            <span className="text-muted-foreground">project timeline</span>
                           </div>
                         </div>
 
-                        {/* Results */}
-                        <div>
-                          <h4 className="font-semibold text-sm mb-2">Key Results:</h4>
-                          <div className="grid grid-cols-3 gap-2 text-center">
-                            {Object.entries(project.results).map(([key, value], idx) => (
-                              <div key={idx}>
-                                <div className="text-sm font-bold text-tech-accent">{value}</div>
-                                <div className="text-xs text-muted-foreground capitalize">{key}</div>
-                              </div>
-                            ))}
+                        {/* Services & Technologies */}
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="font-semibold text-sm mb-2 text-muted-foreground/70 uppercase tracking-wide">Services</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {project.services.map((service, idx) => (
+                                <Badge key={idx} variant="outline" className="text-sm">
+                                  {service}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-sm mb-2 text-muted-foreground/70 uppercase tracking-wide">Technologies</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {project.technologies.map((tech, idx) => (
+                                <Badge key={idx} variant="secondary" className="text-sm">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
                           </div>
                         </div>
 
-                        {/* Technologies */}
-                        <div>
-                          <h4 className="font-semibold text-sm mb-2">Technologies:</h4>
-                          <div className="flex flex-wrap gap-1">
-                            {project.technologies.map((tech, idx) => (
-                              <Badge key={idx} variant="secondary" className="text-xs">
-                                {tech}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-
-                        <Button variant="minimal" className="w-full group mt-4">
+                        <Button variant="minimal" className="group mt-6">
                           View Case Study
                           <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-                      </CardContent>
-                    </Card>
+                      </div>
+
+                      {/* Project Image */}
+                      <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                        <div className="aspect-[4/3] overflow-hidden rounded-lg bg-muted">
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="absolute top-4 right-4">
+                          <Badge variant="secondary" className="bg-tech-accent text-tech-accent-foreground">
+                            {project.year}
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </TabsContent>
