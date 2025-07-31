@@ -109,6 +109,9 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+                ABOUT RAZERFAST
+              </div>
               <Badge variant="outline" className="mb-6">About Razerfast</Badge>
               <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
                 We're not just developers —{" "}
@@ -164,6 +167,9 @@ const About = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              OUR MISSION
+            </div>
             <Badge variant="outline" className="mb-4">Our Mission</Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Empowering Local Businesses Through Technology
@@ -193,6 +199,9 @@ const About = () => {
         style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              OUR JOURNEY
+            </div>
             <Badge variant="outline" className="mb-4">Our Journey</Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Building Success Stories Since 2020
@@ -221,6 +230,9 @@ const About = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              MEET THE TEAM
+            </div>
             <Badge variant="outline" className="mb-4">Meet the Team</Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               The Experts Behind Your Success

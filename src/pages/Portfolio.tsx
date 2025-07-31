@@ -142,6 +142,9 @@ const Portfolio = () => {
       <section className="py-20 lg:py-32"
         style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+            OUR PORTFOLIO
+          </div>
           <Badge variant="outline" className="mb-6">Our Portfolio</Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Success Stories from{" "}
@@ -269,6 +272,9 @@ const Portfolio = () => {
         style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              INDUSTRY EXPERTISE
+            </div>
             <Badge variant="outline" className="mb-4">Industry Expertise</Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Specialized Solutions for Every Industry

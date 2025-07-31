@@ -156,6 +156,9 @@ const Services = () => {
       <section className="py-20 lg:py-32"
         style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+            OUR SERVICES
+          </div>
           <Badge variant="outline" className="mb-6">Our Services</Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Complete Digital Solutions for{" "}
@@ -274,6 +277,9 @@ const Services = () => {
         style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              ADDITIONAL SERVICES
+            </div>
             <Badge variant="outline" className="mb-4">Additional Services</Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Supporting Services
@@ -301,6 +307,9 @@ const Services = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              OUR PROCESS
+            </div>
             <Badge variant="outline" className="mb-4">Our Process</Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               How We Work

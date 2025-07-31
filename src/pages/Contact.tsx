@@ -123,6 +123,9 @@ const Contact = () => {
       <section className="py-20 lg:py-32"
         style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+            GET IN TOUCH
+          </div>
           <Badge variant="outline" className="mb-6">Get In Touch</Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Let's Build Something{" "}
@@ -154,6 +157,9 @@ const Contact = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              CONTACT OPTIONS
+            </div>
             <Badge variant="outline" className="mb-4">Contact Options</Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Choose Your Preferred Way to Connect
@@ -186,6 +192,9 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Form */}
             <div>
+              <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+                PROJECT DETAILS
+              </div>
               <Badge variant="outline" className="mb-4">Project Details</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Tell Us About Your Project

@@ -68,6 +68,9 @@ const Index = () => {
       <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s' }}>
+              OUR WORK
+            </div>
             <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4 animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
               <span className="inline-block animate-letter-slide opacity-0" style={{ animationDelay: '0.3s' }}>O</span>
               <span className="inline-block animate-letter-slide opacity-0" style={{ animationDelay: '0.4s' }}>u</span>
@@ -125,6 +128,11 @@ const Index = () => {
       {/* About Section - Humaan Style */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto">
+          <div className="mb-16 text-center">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s' }}>
+              ABOUT US
+            </div>
+          </div>
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-slide-in-left opacity-0" style={{ animationDelay: '0.2s' }}>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
@@ -165,6 +173,9 @@ const Index = () => {
         style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s' }}>
+              OUR EXPERTISE
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               <span className="inline-block animate-letter-slide opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '0.4s' }}>W</span>
               <span className="inline-block animate-letter-slide opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '0.5s' }}>h</span>
@@ -213,6 +224,9 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s' }}>
+            LET'S WORK TOGETHER
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
             <span className="inline-block animate-reveal-text opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '0.4s' }}>Ready</span>{" "}
             <span className="inline-block animate-reveal-text opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '0.6s' }}>to</span>{" "}
