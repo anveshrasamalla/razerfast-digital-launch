@@ -11,6 +11,7 @@ All colors MUST be HSL.
   :root {
     /* Base Colors - Humaan-inspired beige/cream theme */
     --background: 39 33% 95%;
+    --theme-background: 60 33% 93%;
     --foreground: 25 25% 15%;
 
     /* Card & Surface Colors */
