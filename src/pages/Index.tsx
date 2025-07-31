@@ -22,19 +22,19 @@ const Index = () => {
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12 overflow-hidden">
-            <div className="animate-text-reveal opacity-0" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-fade-in">
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
-                <span className="inline-block animate-word-fade opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '0.4s' }}>
+                <span className="inline-block hover:text-tech-accent transition-colors duration-500 cursor-default">
                   Extraordinary
                 </span>
               </h1>
             </div>
-            <div className="animate-text-reveal opacity-0" style={{ animationDelay: '0.6s' }}>
+            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
-                <span className="inline-block animate-word-fade opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '0.8s' }}>
+                <span className="inline-block hover:text-tech-accent transition-colors duration-500 cursor-default">
                   Digital
                 </span>{" "}
-                <span className="inline-block animate-word-fade opacity-0 hover:text-tech-accent transition-colors duration-500 cursor-default" style={{ animationDelay: '1.0s' }}>
+                <span className="inline-block hover:text-tech-accent transition-colors duration-500 cursor-default">
                   Experiences
                 </span>
               </h1>
