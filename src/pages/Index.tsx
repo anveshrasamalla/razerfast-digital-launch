@@ -130,7 +130,8 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card">
+      <section className="py-24 px-4 sm:px-6 lg:px-8"
+        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">

@@ -153,7 +153,8 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-subtle">
+      <section className="py-20 lg:py-32"
+        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="outline" className="mb-6">Our Services</Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
@@ -269,7 +270,8 @@ const Services = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20"
+        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Additional Services</Badge>

@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
   const isActivePath = (path: string) => location.pathname === path;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#a8c8c8' }}>
+    <div className="min-h-screen" style={{ background: 'var(--theme-background, #f3f3e9)' }}>
       {/* Navigation */}
       <nav className="py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
