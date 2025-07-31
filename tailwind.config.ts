@@ -125,6 +125,64 @@ export default {
 					'0%, 100%': { opacity: '0.5' },
 					'50%': { opacity: '1' }
 				},
+				'slide-up': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(100px)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in-left': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateX(-100px)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
+				'reveal-text': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(50px) rotate(10deg)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0) rotate(0deg)'
+					}
+				},
+				'clip-path': {
+					'0%': { 
+						clipPath: 'inset(0 100% 0 0)'
+					},
+					'100%': { 
+						clipPath: 'inset(0 0 0 0)'
+					}
+				},
+				'scale-reveal': {
+					'0%': { 
+						opacity: '0',
+						transform: 'scale(0.8)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'scale(1)'
+					}
+				},
+				'letter-slide': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(100px) skewY(10deg)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0) skewY(0deg)'
+					}
+				},
 				'text-reveal': {
 					'0%': { 
 						opacity: '0',
@@ -163,11 +221,17 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'slide-in-left': 'slide-in-left 0.8s ease-out',
+				'slide-up': 'slide-up 0.8s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite',
 				'fade-in-up': 'fade-in-up 0.8s ease-out',
 				'text-reveal': 'text-reveal 0.8s ease-out forwards',
-				'word-fade': 'word-fade 0.6s ease-out forwards'
+				'word-fade': 'word-fade 0.6s ease-out forwards',
+				'reveal-text': 'reveal-text 1s ease-out forwards',
+				'clip-path': 'clip-path 1.2s ease-out forwards',
+				'scale-reveal': 'scale-reveal 0.8s ease-out forwards',
+				'letter-slide': 'letter-slide 0.8s ease-out forwards'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
