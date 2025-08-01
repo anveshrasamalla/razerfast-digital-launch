@@ -103,9 +103,11 @@ const About = () => {
 
   return (
     <Layout>
+      <style>
+        {`.min-h-screen { background: #A8C4B5 !important; }`}
+      </style>
       {/* Hero Section */}
-      <section className="py-20 lg:py-32"
-        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: '#A8C4B5' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -195,8 +197,7 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20"
-        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
+      <section className="py-20" style={{ backgroundColor: '#A8C4B5' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">

@@ -152,9 +152,11 @@ const Services = () => {
 
   return (
     <Layout>
+      <style>
+        {`.min-h-screen { background: #E6D7F0 !important; }`}
+      </style>
       {/* Hero Section */}
-      <section className="py-20 lg:py-32"
-        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: '#E6D7F0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
             OUR SERVICES
@@ -273,8 +275,7 @@ const Services = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20"
-        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
+      <section className="py-20" style={{ backgroundColor: '#E6D7F0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">

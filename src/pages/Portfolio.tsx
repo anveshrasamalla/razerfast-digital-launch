@@ -138,9 +138,11 @@ const Portfolio = () => {
 
   return (
     <Layout>
+      <style>
+        {`.min-h-screen { background: #F0EDE8 !important; }`}
+      </style>
       {/* Hero Section */}
-      <section className="py-20 lg:py-32"
-        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: '#F0EDE8' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
             OUR PORTFOLIO
@@ -289,8 +291,7 @@ const Portfolio = () => {
       </section>
 
       {/* Industry Expertise */}
-      <section className="py-20"
-        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
+      <section className="py-20" style={{ backgroundColor: '#F0EDE8' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
