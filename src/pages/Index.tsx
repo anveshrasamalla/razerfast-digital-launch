@@ -6,7 +6,7 @@ import Layout from "@/components/Layout";
 import { ArrowRight, Play, CheckCircle, Star, TrendingUp, Users, Zap } from "lucide-react";
 const Index = () => {
   const [currentWord, setCurrentWord] = useState(0);
-  const words = ["visible", "sleek", "Automated", "Optimized", "Scalable"];
+  const words = ["Websites", "E-Commerce", "Apps", "Digital Success"];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWord(prev => (prev + 1) % words.length);
@@ -23,21 +23,37 @@ const Index = () => {
     }}>
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12 overflow-hidden">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight">
-              Let's make your business{" "}
-              <div className="inline-block relative">
-                <span 
-                  key={currentWord}
-                  className="inline-block animate-fade-in text-blue-900"
-                  style={{
-                    animationDuration: '0.6s',
-                    animationFillMode: 'both'
-                  }}
-                >
-                  {words[currentWord]}
+            <div className="animate-fade-in font-light text-7xl text-justify">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
+                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-left animation-delay-200 hover:scale-105">
+                  Extraordinary
                 </span>
-              </div>
-            </h1>
+              </h1>
+            </div>
+            <div className="animate-fade-in animation-delay-500">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
+                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-right animation-delay-700 hover:scale-105">
+                  Digital
+                </span>{" "}
+                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-right animation-delay-1000 hover:scale-105">
+                  Experiences
+                </span>
+              </h1>
+            </div>
+          </div>
+          
+          <div className="max-w-2xl mx-auto mb-16">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              We design, build and ship{" "}
+              <span className="hover:text-tech-accent transition-colors duration-300 cursor-default">world-class</span>{" "}
+              digital products for{" "}
+              <span className="hover:text-tech-accent transition-colors duration-300 cursor-default">forward-thinking</span>{" "}
+              local businesses.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            
           </div>
         </div>
       </section>
