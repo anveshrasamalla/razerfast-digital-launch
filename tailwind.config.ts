@@ -231,7 +231,9 @@ export default {
 				'reveal-text': 'reveal-text 1s ease-out forwards',
 				'clip-path': 'clip-path 1.2s ease-out forwards',
 				'scale-reveal': 'scale-reveal 0.8s ease-out forwards',
-				'letter-slide': 'letter-slide 0.8s ease-out forwards'
+				'letter-slide': 'letter-slide 0.8s ease-out forwards',
+				'bounce-in': 'bounce-in 0.8s ease-out',
+				'scale-in': 'scale-in 0.3s ease-out'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
