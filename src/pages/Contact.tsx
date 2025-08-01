@@ -5,25 +5,36 @@ import { ArrowRight, Globe } from "lucide-react";
 export default function Contact() {
   return (
     <Layout>
-      <div className="min-h-screen relative overflow-hidden" style={{ background: 'var(--theme-background, #f3f3e9)' }}>
+      <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#d4c5d9' }}>
         {/* 3D Geometric Shapes */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Orange/Red Circle */}
-          <div className="absolute top-32 right-80 w-16 h-16 bg-gradient-to-br from-red-400 to-orange-400 rounded-full shadow-2xl"></div>
+          <div className="absolute top-32 right-80 w-16 h-16 bg-gradient-to-br from-red-400 to-orange-400 rounded-full shadow-lg"></div>
           
           {/* Yellow Donut */}
-          <div className="absolute top-20 right-32 w-32 h-32 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full shadow-2xl">
+          <div className="absolute top-20 right-32 w-32 h-32 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full shadow-lg">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-purple-200 rounded-full"></div>
           </div>
           
-          {/* Purple Cylinder/Tube */}
-          <div className="absolute top-80 right-48 w-40 h-24 bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-2xl transform rotate-12 perspective-1000">
-            <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-r from-purple-700 to-purple-800 rounded-full transform translate-y-1"></div>
+          {/* Purple U-Shape */}
+          <div className="absolute top-72 right-48 w-48 h-32 perspective-1000">
+            <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-700 rounded-t-full shadow-lg relative">
+              <div className="absolute inset-x-8 top-0 bottom-4 bg-gradient-to-br from-purple-600 to-purple-700 rounded-t-full"></div>
+              <div className="absolute inset-x-12 top-4 bottom-8 bg-purple-200 rounded-t-full"></div>
+            </div>
+            {/* Yellow sphere on the U */}
+            <div className="absolute -top-4 right-4 w-16 h-16 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full shadow-lg"></div>
+            {/* Base platform */}
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-56 h-8 bg-gradient-to-br from-pink-200 to-pink-300 rounded-full shadow-sm"></div>
           </div>
           
-          {/* Yellow Platform */}
-          <div className="absolute bottom-32 right-12 w-80 h-16 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full shadow-2xl transform perspective-1000 rotate-x-45">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2 w-24 h-8 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full shadow-lg"></div>
+          {/* Yellow Donut Platform */}
+          <div className="absolute bottom-32 right-16 w-80 h-20 perspective-1000">
+            <div className="w-full h-full bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full shadow-lg relative">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-purple-200 rounded-full"></div>
+              {/* Inner hole highlight */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white/30 rounded-full"></div>
+            </div>
           </div>
         </div>
 
