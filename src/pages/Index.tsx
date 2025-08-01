@@ -28,7 +28,7 @@ const Index = () => {
           </div>
           
           {/* Main headline */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.9] tracking-tight mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight tracking-wide mb-8">
             Let's make your business{" "}
             <span 
               key={currentWord}
