@@ -6,6 +6,14 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { Loader2, Download, Zap, Target, Wind, ArrowRight, Sparkles, Activity } from "lucide-react";
 
+// Import all generated logos
+import logoRazorSpeed from "@/assets/logo-razor-speed.png";
+import logoLightningBolt from "@/assets/logo-lightning-bolt.png";
+import logoSonicBoom from "@/assets/logo-sonic-boom.png";
+import logoRacingStripes from "@/assets/logo-racing-stripes.png";
+import logoGeometricArrow from "@/assets/logo-geometric-arrow.png";
+import logoParticleTrail from "@/assets/logo-particle-trail.png";
+
 interface GeneratedLogo {
   id: string;
   name: string;
@@ -65,35 +73,43 @@ export const LogoGenerator = () => {
 
   const generateAllLogos = async () => {
     setIsGenerating(true);
+    
+    // Map of logo IDs to their generated images
+    const logoImages = {
+      "razor-speed": logoRazorSpeed,
+      "lightning-bolt": logoLightningBolt,
+      "sonic-boom": logoSonicBoom,
+      "racing-stripes": logoRacingStripes,
+      "geometric-arrow": logoGeometricArrow,
+      "particle-trail": logoParticleTrail
+    };
+
     const logos: GeneratedLogo[] = [];
 
     try {
       for (const logoPrompt of logoPrompts) {
-        toast.info(`Generating ${logoPrompt.name}...`);
-        
-        // Generate a placeholder for now since Edge Function isn't working
-        const placeholderUrl = `https://via.placeholder.com/512x512/000000/FFFFFF?text=${encodeURIComponent(logoPrompt.name)}`;
+        toast.info(`Loading ${logoPrompt.name}...`);
         
         logos.push({
           id: logoPrompt.id,
           name: logoPrompt.name,
-          imageURL: placeholderUrl,
+          imageURL: logoImages[logoPrompt.id as keyof typeof logoImages],
           description: logoPrompt.description,
           icon: logoPrompt.icon
         });
         
-        toast.success(`${logoPrompt.name} placeholder created!`);
+        toast.success(`${logoPrompt.name} loaded!`);
         
-        // Add small delay between generations
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // Add small delay for smooth UX
+        await new Promise(resolve => setTimeout(resolve, 300));
       }
 
       setGeneratedLogos(logos);
-      toast.success("Logo placeholders generated! Connect to Supabase for actual AI generation.");
+      toast.success("All logo concepts loaded successfully!");
       
     } catch (error) {
-      console.error('Error generating logos:', error);
-      toast.error('Failed to generate logos. Please try again.');
+      console.error('Error loading logos:', error);
+      toast.error('Failed to load logos. Please try again.');
     } finally {
       setIsGenerating(false);
     }
@@ -203,10 +219,10 @@ export const LogoGenerator = () => {
           <CardTitle>💡 Next Steps</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <p>1. <strong>Get your API key:</strong> Visit runware.ai and create an account</p>
-          <p>2. <strong>Generate logos:</strong> Enter your API key above and click generate</p>
+          <p>1. <strong>Load logos:</strong> Click the button above to load all 6 logo concepts</p>
+          <p>2. <strong>Preview designs:</strong> View each unique logo concept with different speed themes</p>
           <p>3. <strong>Download favorites:</strong> Click the download button on logos you like</p>
-          <p>4. <strong>For production:</strong> Add your API key to Supabase Edge Function Secrets</p>
+          <p>4. <strong>Use in your brand:</strong> High-quality PNG files ready for your business</p>
         </CardContent>
       </Card>
     </div>
