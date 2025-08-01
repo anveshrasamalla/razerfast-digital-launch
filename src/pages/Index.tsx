@@ -28,7 +28,14 @@ const Index = () => {
           </div>
           
           {/* Main headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight tracking-wide mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight tracking-wide mb-8"
+          key=<span
+            key={words[currentWord]}
+            className="inline-block transition-opacity duration-500 ease-in-out animate-fade-in-up"
+          >
+            {words[currentWord]}
+          </span>
+          >
             Let's make your business{" "}
             <span 
               key={currentWord}
@@ -37,7 +44,12 @@ const Index = () => {
                 animation: 'fade-in 0.7s ease-out forwards'
               }}
             >
-              {words[currentWord]}
+              <span
+            key={words[currentWord]}
+            className="inline-block transition-opacity duration-500 ease-in-out animate-fade-in-up"
+          >
+            {words[currentWord]}
+          </span>
             </span>
           </h1>
           
