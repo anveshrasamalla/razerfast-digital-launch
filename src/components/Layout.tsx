@@ -31,7 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
               to="/" 
               className="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight group transition-all duration-300 hover:scale-110"
             >
-              <span className="inline-block transition-all duration-500 group-hover:text-tech-accent animate-pulse">
+              <span className="inline-block relative glitch-text">
                 razerfast
               </span>
             </Link>

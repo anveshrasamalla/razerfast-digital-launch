@@ -152,3 +152,127 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Glitch effect for logo */
+.glitch-text {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: 'razerfast';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.glitch-text::before {
+  animation: glitch-1 0.6s infinite;
+  color: #ff0040;
+  z-index: -1;
+  transform: translate(-2px, 0);
+}
+
+.glitch-text::after {
+  animation: glitch-2 0.6s infinite;
+  color: #00ff40;
+  z-index: -2;
+  transform: translate(2px, 0);
+}
+
+@keyframes glitch {
+  0%, 85%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 1px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(2px, -1px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(-1px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(1px, -2px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(-2px, 1px);
+    filter: hue-rotate(90deg);
+  }
+  60% {
+    transform: translate(2px, -1px);
+    filter: hue-rotate(180deg);
+  }
+  70% {
+    transform: translate(-1px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(1px, -2px);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes glitch-1 {
+  0%, 85%, 100% {
+    transform: translate(-2px, 0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  10% {
+    transform: translate(-4px, 0);
+    clip-path: polygon(0 10%, 100% 15%, 100% 85%, 0 90%);
+  }
+  20% {
+    transform: translate(-2px, 0);
+    clip-path: polygon(0 20%, 100% 25%, 100% 75%, 0 80%);
+  }
+  30% {
+    transform: translate(-4px, 0);
+    clip-path: polygon(0 30%, 100% 35%, 100% 65%, 0 70%);
+  }
+  40% {
+    transform: translate(-2px, 0);
+    clip-path: polygon(0 40%, 100% 45%, 100% 55%, 0 60%);
+  }
+  50% {
+    transform: translate(-4px, 0);
+    clip-path: polygon(0 50%, 100% 55%, 100% 45%, 0 50%);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 85%, 100% {
+    transform: translate(2px, 0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  10% {
+    transform: translate(4px, 0);
+    clip-path: polygon(0 15%, 100% 10%, 100% 90%, 0 85%);
+  }
+  20% {
+    transform: translate(2px, 0);
+    clip-path: polygon(0 25%, 100% 20%, 100% 80%, 0 75%);
+  }
+  30% {
+    transform: translate(4px, 0);
+    clip-path: polygon(0 35%, 100% 30%, 100% 70%, 0 65%);
+  }
+  40% {
+    transform: translate(2px, 0);
+    clip-path: polygon(0 45%, 100% 40%, 100% 60%, 0 55%);
+  }
+  50% {
+    transform: translate(4px, 0);
+    clip-path: polygon(0 55%, 100% 50%, 100% 50%, 0 45%);
+  }
+}
