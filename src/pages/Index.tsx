@@ -17,28 +17,34 @@ const Index = () => {
       <style>
         {`.min-h-screen { background: #F5F4F1 !important; }`}
       </style>
-      {/* Hero Section - Humaan Style */}
+      {/* Hero Section - Adchitects Style */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{
       backgroundColor: '#F5F4F1'
     }}>
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-6 overflow-hidden">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
-              Let's make your business{" "}
-              <span 
-                key={currentWord}
-                className="text-foreground transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fade-in"
-                style={{
-                  animation: 'fade-in 0.7s ease-out forwards',
-                  animationDelay: '0.1s'
-                }}
-              >
-                {words[currentWord]}
-              </span>
-            </h1>
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Small subtitle */}
+          <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-8 letterspacing-wide">
+            RIGHT TOOLS. RIGHT TEAM. RAZERFAST.
           </div>
-          <p className="text-lg md:text-xl text-muted-foreground font-medium tracking-wide">
-            Right Tools. Right Team. Razerfast.
+          
+          {/* Main headline */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight mb-8">
+            <div className="mb-2">Let's make your business</div>
+            <span 
+              key={currentWord}
+              className="text-foreground transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fade-in inline-block"
+              style={{
+                animation: 'fade-in 0.7s ease-out forwards',
+                animationDelay: '0.1s'
+              }}
+            >
+              {words[currentWord]}
+            </span>
+          </h1>
+          
+          {/* Tagline */}
+          <p className="text-xl md:text-2xl text-foreground font-medium tracking-wide max-w-2xl mx-auto">
+            On‑Time. On‑Budget. On‑Point.
           </p>
         </div>
       </section>
