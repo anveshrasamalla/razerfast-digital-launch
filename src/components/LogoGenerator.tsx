@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
-import { Loader2, Download, Zap, Target, Wind, ArrowRight, Sparkles, Activity } from "lucide-react";
+import { Loader2, Download, Zap, Target, Wind, ArrowRight, Sparkles, Activity, Type, Italic, Bold, PenTool, Layers, Hash } from "lucide-react";
 
 // Import all generated logos
 import logoRazorSpeed from "@/assets/logo-razor-speed.png";
@@ -13,6 +13,14 @@ import logoSonicBoom from "@/assets/logo-sonic-boom.png";
 import logoRacingStripes from "@/assets/logo-racing-stripes.png";
 import logoGeometricArrow from "@/assets/logo-geometric-arrow.png";
 import logoParticleTrail from "@/assets/logo-particle-trail.png";
+
+// New text-focused logos
+import logoSplitText from "@/assets/logo-split-text.png";
+import logoGradientFade from "@/assets/logo-gradient-fade.png";
+import logoStretchedText from "@/assets/logo-stretched-text.png";
+import logoNeonGlow from "@/assets/logo-neon-glow.png";
+import logoTiltedLetters from "@/assets/logo-tilted-letters.png";
+import logo3dText from "@/assets/logo-3d-text.png";
 
 interface GeneratedLogo {
   id: string;
@@ -68,6 +76,49 @@ export const LogoGenerator = () => {
       icon: Sparkles,
       description: "Digital pixels trailing behind moving text",
       prompt: "Digital logo for 'razerfast' with particle trail effect, text appears to be moving fast creating digital particle trails, glowing pixels and dots trailing behind, neon blue and purple colors, futuristic tech design, dark background, vector style"
+    },
+    // New text-focused concepts
+    {
+      id: "split-text",
+      name: "Split Letter Effect",
+      icon: Hash,
+      description: "Letters sliced diagonally with offset pieces",
+      prompt: "Typography logo for 'razerfast' with split letter effect, where each letter appears to be sliced diagonally with offset pieces"
+    },
+    {
+      id: "gradient-fade",
+      name: "Gradient Fade Text",
+      icon: Type,
+      description: "Text fades from black to blue suggesting speed",
+      prompt: "Minimalist logo 'razerfast' with gradient text effect from black to electric blue"
+    },
+    {
+      id: "stretched-text",
+      name: "Speed Stretched Text",
+      icon: Italic,
+      description: "Letters stretched horizontally to show motion",
+      prompt: "Bold typography logo 'razerfast' where letters are stretched horizontally to show speed"
+    },
+    {
+      id: "neon-glow",
+      name: "Neon Glow Effect",
+      icon: Layers,
+      description: "Futuristic glowing text with cyberpunk style",
+      prompt: "Futuristic logo 'razerfast' with neon glow effect, cyberpunk style typography"
+    },
+    {
+      id: "tilted-letters",
+      name: "Dynamic Tilted Letters",
+      icon: PenTool,
+      description: "Scattered and rotated letters creating movement",
+      prompt: "Creative logo 'razerfast' where some letters are tilted and rotated to create dynamic movement"
+    },
+    {
+      id: "3d-text",
+      name: "3D Extruded Text",
+      icon: Bold,
+      description: "Letters with depth and dimensional shadows",
+      prompt: "Typography logo 'razerfast' with 3D extrusion effect, letters appear to come out of the page"
     }
   ];
 
@@ -81,7 +132,13 @@ export const LogoGenerator = () => {
       "sonic-boom": logoSonicBoom,
       "racing-stripes": logoRacingStripes,
       "geometric-arrow": logoGeometricArrow,
-      "particle-trail": logoParticleTrail
+      "particle-trail": logoParticleTrail,
+      "split-text": logoSplitText,
+      "gradient-fade": logoGradientFade,
+      "stretched-text": logoStretchedText,
+      "neon-glow": logoNeonGlow,
+      "tilted-letters": logoTiltedLetters,
+      "3d-text": logo3dText
     };
 
     const logos: GeneratedLogo[] = [];
@@ -142,22 +199,22 @@ export const LogoGenerator = () => {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">RazerFast Logo Generator</h1>
         <p className="text-muted-foreground mb-8">
-          Generate 6 unique logo concepts that tell the story of speed and precision
+          Explore 12 unique logo concepts mixing graphics and creative typography for speed and precision
         </p>
         
         
         <Button 
           onClick={generateAllLogos} 
           disabled={isGenerating}
-          className="w-full"
+          className="w-full max-w-md mx-auto"
         >
           {isGenerating ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Generating Logos...
+              Loading Logos...
             </>
           ) : (
-            "Generate All 6 Logo Concepts"
+            "Load All 12 Logo Concepts"
           )}
         </Button>
       </div>
