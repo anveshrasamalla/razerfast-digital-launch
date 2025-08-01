@@ -23,16 +23,20 @@ const Index = () => {
     }}>
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12 overflow-hidden">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight font-inter">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
               Let's make your business{" "}
-              <span className="inline-block relative h-[1.2em] overflow-hidden">
+              <div className="inline-block relative">
                 <span 
                   key={currentWord}
-                  className="absolute inset-0 animate-word-fade"
+                  className="inline-block animate-fade-in text-foreground"
+                  style={{
+                    animationDuration: '0.4s',
+                    animationFillMode: 'both'
+                  }}
                 >
                   {words[currentWord]}
                 </span>
-              </span>
+              </div>
             </h1>
           </div>
         </div>
