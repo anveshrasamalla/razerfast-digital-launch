@@ -29,9 +29,11 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link 
               to="/" 
-              className="text-2xl font-bold text-gray-800 tracking-tight"
+              className="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight group transition-all duration-300 hover:scale-110"
             >
-              razerfast
+              <span className="inline-block transition-all duration-500 group-hover:text-tech-accent animate-pulse">
+                razerfast
+              </span>
             </Link>
 
             {/* Navigation Pills */}
