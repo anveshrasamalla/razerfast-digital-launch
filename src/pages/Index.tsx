@@ -22,23 +22,24 @@ const Index = () => {
       backgroundColor: '#F5F4F1'
     }}>
         <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-12 overflow-hidden">
+          <div className="mb-6 overflow-hidden">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
-              Let's make your business{" "}
-              <div className="inline-block relative">
-                <span 
-                  key={currentWord}
-                  className="inline-block animate-fade-in text-foreground"
-                  style={{
-                    animationDuration: '0.4s',
-                    animationFillMode: 'both'
-                  }}
-                >
-                  {words[currentWord]}
-                </span>
-              </div>
+              <span className="block">Let's make your business</span>
+              <span 
+                key={currentWord}
+                className="block animate-fade-in text-foreground transition-opacity duration-700 ease-in-out"
+                style={{
+                  animationDuration: '700ms',
+                  animationFillMode: 'both'
+                }}
+              >
+                {words[currentWord]}
+              </span>
             </h1>
           </div>
+          <p className="text-lg md:text-xl text-muted-foreground font-medium tracking-wide">
+            Right Tools. Right Team. Razerfast.
+          </p>
         </div>
       </section>
 
