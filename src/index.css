@@ -276,7 +276,6 @@ All colors MUST be HSL.
     clip-path: polygon(0 55%, 100% 50%, 100% 50%, 0 45%);
   }
   }
-}
 
 /* Enhanced animations for About page */
 @keyframes bounce-in {
