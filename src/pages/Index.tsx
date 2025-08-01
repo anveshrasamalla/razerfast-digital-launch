@@ -4,25 +4,23 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
 import { ArrowRight, Play, CheckCircle, Star, TrendingUp, Users, Zap } from "lucide-react";
-
 const Index = () => {
   const [currentWord, setCurrentWord] = useState(0);
   const words = ["Websites", "E-Commerce", "Apps", "Digital Success"];
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length);
+      setCurrentWord(prev => (prev + 1) % words.length);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
-
-  return (
-    <Layout>
+  return <Layout>
       <style>
         {`.min-h-screen { background: #F5F4F1 !important; }`}
       </style>
       {/* Hero Section - Humaan Style */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F5F4F1' }}>
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{
+      backgroundColor: '#F5F4F1'
+    }}>
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12 overflow-hidden">
             <div>
@@ -55,16 +53,15 @@ const Index = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button variant="ghost" size="lg" className="group text-lg px-8 py-6 hover:scale-105 transition-all duration-300">
-              <Play className="w-5 h-5 mr-2" />
-              See Our Work
-            </Button>
+            
           </div>
         </div>
       </section>
 
       {/* Portfolio Grid - Humaan Style */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#F5F4F1' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
+      backgroundColor: '#F5F4F1'
+    }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
@@ -118,7 +115,9 @@ const Index = () => {
       </section>
 
       {/* About Section - Humaan Style */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#F5F4F1' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
+      backgroundColor: '#F5F4F1'
+    }}>
         <div className="max-w-4xl mx-auto">
           <div className="mb-16 text-center">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
@@ -161,7 +160,9 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#F5F4F1' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
+      backgroundColor: '#F5F4F1'
+    }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
@@ -204,7 +205,9 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#F5F4F1' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
+      backgroundColor: '#F5F4F1'
+    }}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
             LET'S WORK TOGETHER
@@ -224,8 +227,6 @@ const Index = () => {
           </Button>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Index;
