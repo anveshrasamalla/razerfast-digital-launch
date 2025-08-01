@@ -24,10 +24,10 @@ const Index = () => {
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-6 overflow-hidden">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
-              <span className="block">Let's make your business</span>
+              Let's make your business{" "}
               <span 
                 key={currentWord}
-                className="block text-foreground transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fade-in"
+                className="text-foreground transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fade-in"
                 style={{
                   animation: 'fade-in 0.7s ease-out forwards',
                   animationDelay: '0.1s'
