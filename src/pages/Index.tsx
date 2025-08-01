@@ -10,7 +10,7 @@ const Index = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWord(prev => (prev + 1) % words.length);
-    }, 1500);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
   return <Layout>
@@ -27,10 +27,10 @@ const Index = () => {
               <span className="block">Let's make your business</span>
               <span 
                 key={currentWord}
-                className="block animate-fade-in text-foreground transition-opacity duration-700 ease-in-out"
+                className="block text-foreground transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fade-in"
                 style={{
-                  animationDuration: '700ms',
-                  animationFillMode: 'both'
+                  animation: 'fade-in 0.7s ease-out forwards',
+                  animationDelay: '0.1s'
                 }}
               >
                 {words[currentWord]}
