@@ -17,19 +17,19 @@ const Index = () => {
       <style>
         {`.min-h-screen { background: #F5F4F1 !important; }`}
       </style>
-      {/* Hero Section - Adchitects Style */}
+      {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{
       backgroundColor: '#F5F4F1'
     }}>
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           {/* Small subtitle */}
-          <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-8 letterspacing-wide">
+          <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-12">
             RIGHT TOOLS. RIGHT TEAM. RAZERFAST.
           </div>
           
           {/* Main headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight mb-8">
-            <div className="mb-2">Let's make your business</div>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.9] tracking-tight mb-8">
+            Let's make your business{" "}
             <span 
               key={currentWord}
               className="text-foreground transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fade-in inline-block"
@@ -43,7 +43,7 @@ const Index = () => {
           </h1>
           
           {/* Tagline */}
-          <p className="text-xl md:text-2xl text-foreground font-medium tracking-wide max-w-2xl mx-auto">
+          <p className="text-2xl md:text-3xl text-foreground font-medium tracking-wide">
             On‑Time. On‑Budget. On‑Point.
           </p>
         </div>
