@@ -18,8 +18,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <style>
+        {`.min-h-screen { background: #F5F4F1 !important; }`}
+      </style>
       {/* Hero Section - Humaan Style */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ backgroundColor: '#F5F4F1' }}>
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12 overflow-hidden">
             <div>
@@ -65,7 +68,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio Grid - Humaan Style */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#F5F4F1' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
@@ -119,7 +122,7 @@ const Index = () => {
       </section>
 
       {/* About Section - Humaan Style */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#F5F4F1' }}>
         <div className="max-w-4xl mx-auto">
           <div className="mb-16 text-center">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
@@ -162,8 +165,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
-        style={{ background: 'var(--theme-background, #f3f3e9)' }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#F5F4F1' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
@@ -206,7 +208,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: '#F5F4F1' }}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
             LET'S WORK TOGETHER
