@@ -32,10 +32,9 @@ const Index = () => {
             Let's make your business{" "}
             <span 
               key={currentWord}
-              className="text-foreground transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fade-in inline-block"
+              className="inline-block transition-all duration-700 ease-in-out"
               style={{
-                animation: 'fade-in 0.7s ease-out forwards',
-                animationDelay: '0.1s'
+                animation: 'fade-in 0.7s ease-out forwards'
               }}
             >
               {words[currentWord]}
