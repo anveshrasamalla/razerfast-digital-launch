@@ -28,10 +28,7 @@ const Index = () => {
               <span className="inline-block relative h-[1.2em] overflow-hidden">
                 <span 
                   key={currentWord}
-                  className="absolute inset-0 transition-opacity duration-500 ease-in-out"
-                  style={{
-                    opacity: 1
-                  }}
+                  className="absolute inset-0 animate-word-fade"
                 >
                   {words[currentWord]}
                 </span>
