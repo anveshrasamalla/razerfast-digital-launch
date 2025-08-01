@@ -11,7 +11,12 @@ serve(async (req) => {
   }
 
   try {
-    const { apiKey, positivePrompt, width, height, numberResults, outputFormat } = await req.json()
+    const apiKey = Deno.env.get('RUNWARE_API_KEY')
+    if (!apiKey) {
+      throw new Error('RUNWARE_API_KEY not configured in Edge Function Secrets')
+    }
+
+    const { positivePrompt, width, height, numberResults, outputFormat } = await req.json()
 
     const response = await fetch('https://api.runware.ai/v1', {
       method: 'POST',

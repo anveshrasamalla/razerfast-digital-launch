@@ -15,7 +15,6 @@ interface GeneratedLogo {
 }
 
 export const LogoGenerator = () => {
-  const [apiKey, setApiKey] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedLogos, setGeneratedLogos] = useState<GeneratedLogo[]>([]);
 
@@ -65,11 +64,6 @@ export const LogoGenerator = () => {
   ];
 
   const generateAllLogos = async () => {
-    if (!apiKey) {
-      toast.error("Please enter your Runware API key");
-      return;
-    }
-
     setIsGenerating(true);
     const logos: GeneratedLogo[] = [];
 
@@ -83,7 +77,6 @@ export const LogoGenerator = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            apiKey,
             positivePrompt: logoPrompt.prompt,
             width: 1024,
             height: 1024,
@@ -138,40 +131,21 @@ export const LogoGenerator = () => {
           Generate 6 unique logo concepts that tell the story of speed and precision
         </p>
         
-        {/* API Key Input */}
-        <Card className="max-w-md mx-auto mb-8">
-          <CardHeader>
-            <CardTitle>Runware API Key</CardTitle>
-            <CardDescription>
-              Get your API key from{" "}
-              <a href="https://runware.ai/" target="_blank" className="text-primary hover:underline">
-                runware.ai
-              </a>
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <Input
-              type="password"
-              placeholder="Enter your Runware API key"
-              value={apiKey}
-              onChange={(e) => setApiKey(e.target.value)}
-            />
-            <Button 
-              onClick={generateAllLogos} 
-              disabled={isGenerating || !apiKey}
-              className="w-full"
-            >
-              {isGenerating ? (
-                <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  Generating Logos...
-                </>
-              ) : (
-                "Generate All 6 Logo Concepts"
-              )}
-            </Button>
-          </CardContent>
-        </Card>
+        
+        <Button 
+          onClick={generateAllLogos} 
+          disabled={isGenerating}
+          className="w-full"
+        >
+          {isGenerating ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Generating Logos...
+            </>
+          ) : (
+            "Generate All 6 Logo Concepts"
+          )}
+        </Button>
       </div>
 
       {/* Logo Concepts Preview */}
