@@ -6,49 +6,46 @@ import Layout from "@/components/Layout";
 import { ArrowRight, Play, CheckCircle, Star, TrendingUp, Users, Zap } from "lucide-react";
 const Index = () => {
   const [currentWord, setCurrentWord] = useState(0);
-  const words = ["Websites", "E-Commerce", "Apps", "Digital Success"];
+  const words = ["visible", "sleek", "Automated", "Optimized", "Scalable"];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWord(prev => (prev + 1) % words.length);
-    }, 2500);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
   return <Layout>
       <style>
         {`.min-h-screen { background: #F5F4F1 !important; }`}
       </style>
-      {/* Hero Section - Humaan Style */}
+      {/* Hero Section - Adchitects Style */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{
       backgroundColor: '#F5F4F1'
     }}>
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-12 overflow-hidden">
-            <div className="animate-fade-in font-light text-7xl text-justify">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
-                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-left animation-delay-200 hover:scale-105">
-                  Extraordinary
-                </span>
-              </h1>
-            </div>
-            <div className="animate-fade-in animation-delay-500">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
-                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-right animation-delay-700 hover:scale-105">
-                  Digital
-                </span>{" "}
-                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-right animation-delay-1000 hover:scale-105">
-                  Experiences
-                </span>
-              </h1>
-            </div>
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Small subtitle */}
+          <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-8 letterspacing-wide">
+            RIGHT TOOLS. RIGHT TEAM. RAZERFAST.
           </div>
           
-          <div className="max-w-2xl mx-auto mb-16">
-            
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            
-          </div>
+          {/* Main headline */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight tracking-tight mb-8">
+            <div className="mb-2">Let's make your business</div>
+            <span 
+              key={currentWord}
+              className="text-foreground transition-all duration-700 ease-in-out opacity-0 translate-y-4 animate-fade-in inline-block"
+              style={{
+                animation: 'fade-in 0.7s ease-out forwards',
+                animationDelay: '0.1s'
+              }}
+            >
+              {words[currentWord]}
+            </span>
+          </h1>
+          
+          {/* Tagline */}
+          <p className="text-xl md:text-2xl text-foreground font-medium tracking-wide max-w-2xl mx-auto">
+            On‑Time. On‑Budget. On‑Point.
+          </p>
         </div>
       </section>
 
