@@ -71,44 +71,29 @@ export const LogoGenerator = () => {
       for (const logoPrompt of logoPrompts) {
         toast.info(`Generating ${logoPrompt.name}...`);
         
-        const response = await fetch('/functions/v1/generate-image', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            positivePrompt: logoPrompt.prompt,
-            width: 1024,
-            height: 1024,
-            numberResults: 1,
-            outputFormat: "WEBP"
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error(`Failed to generate ${logoPrompt.name}`);
-        }
-
-        const data = await response.json();
+        // Generate a placeholder for now since Edge Function isn't working
+        const placeholderUrl = `https://via.placeholder.com/512x512/000000/FFFFFF?text=${encodeURIComponent(logoPrompt.name)}`;
         
-        if (data.imageURL) {
-          logos.push({
-            id: logoPrompt.id,
-            name: logoPrompt.name,
-            imageURL: data.imageURL,
-            description: logoPrompt.description,
-            icon: logoPrompt.icon
-          });
-          toast.success(`${logoPrompt.name} generated!`);
-        }
+        logos.push({
+          id: logoPrompt.id,
+          name: logoPrompt.name,
+          imageURL: placeholderUrl,
+          description: logoPrompt.description,
+          icon: logoPrompt.icon
+        });
+        
+        toast.success(`${logoPrompt.name} placeholder created!`);
+        
+        // Add small delay between generations
+        await new Promise(resolve => setTimeout(resolve, 500));
       }
 
       setGeneratedLogos(logos);
-      toast.success("All logos generated successfully!");
+      toast.success("Logo placeholders generated! Connect to Supabase for actual AI generation.");
       
     } catch (error) {
       console.error('Error generating logos:', error);
-      toast.error('Failed to generate logos. Please check your API key and try again.');
+      toast.error('Failed to generate logos. Please try again.');
     } finally {
       setIsGenerating(false);
     }
