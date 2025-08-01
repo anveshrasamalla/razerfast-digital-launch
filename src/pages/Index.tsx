@@ -23,19 +23,19 @@ const Index = () => {
     }}>
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12 overflow-hidden">
-            <div className="animate-fade-in">
+            <div>
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
-                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-left animation-delay-200 hover:scale-105">
+                <span className="inline-block hover:text-tech-accent transition-colors duration-500 cursor-default">
                   Extraordinary
                 </span>
               </h1>
             </div>
-            <div className="animate-fade-in animation-delay-500">
+            <div>
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight group">
-                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-right animation-delay-700 hover:scale-105">
+                <span className="inline-block hover:text-tech-accent transition-colors duration-500 cursor-default">
                   Digital
                 </span>{" "}
-                <span className="inline-block hover:text-blue-900 transition-all duration-500 cursor-default animate-slide-in-right animation-delay-1000 hover:scale-105">
+                <span className="inline-block hover:text-tech-accent transition-colors duration-500 cursor-default">
                   Experiences
                 </span>
               </h1>
