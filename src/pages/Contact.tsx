@@ -5,7 +5,7 @@ import { ArrowRight, Globe } from "lucide-react";
 export default function Contact() {
   return (
     <Layout>
-      <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#D4C4D8' }}>
+      <div className="min-h-screen relative overflow-hidden" style={{ background: 'var(--theme-background, #f3f3e9)' }}>
         {/* 3D Geometric Shapes */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Orange/Red Circle */}
