@@ -10,7 +10,7 @@ const Index = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWord(prev => (prev + 1) % words.length);
-    }, 2500);
+    }, 1500);
     return () => clearInterval(interval);
   }, []);
   return <Layout>
@@ -23,14 +23,14 @@ const Index = () => {
     }}>
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12 overflow-hidden">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-foreground leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
               Let's make your business{" "}
               <div className="inline-block relative">
                 <span 
                   key={currentWord}
-                  className="inline-block animate-fade-in text-blue-900"
+                  className="inline-block animate-fade-in text-foreground"
                   style={{
-                    animationDuration: '0.6s',
+                    animationDuration: '0.4s',
                     animationFillMode: 'both'
                   }}
                 >
