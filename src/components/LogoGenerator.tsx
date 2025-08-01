@@ -77,7 +77,7 @@ export const LogoGenerator = () => {
       for (const logoPrompt of logoPrompts) {
         toast.info(`Generating ${logoPrompt.name}...`);
         
-        const response = await fetch('/api/generate-image', {
+        const response = await fetch('/functions/v1/generate-image', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
