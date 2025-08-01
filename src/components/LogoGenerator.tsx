@@ -99,13 +99,26 @@ export const LogoGenerator = () => {
     }
   };
 
-  const downloadLogo = (imageURL: string, fileName: string) => {
-    const link = document.createElement('a');
-    link.href = imageURL;
-    link.download = `razerfast-${fileName}.webp`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const downloadLogo = async (imageURL: string, fileName: string) => {
+    try {
+      // Fetch the image to handle CORS issues
+      const response = await fetch(imageURL);
+      const blob = await response.blob();
+      
+      // Create download link
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `razerfast-${fileName}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      
+      toast.success(`${fileName} downloaded!`);
+    } catch (error) {
+      toast.error('Download failed. Please try right-clicking and saving the image.');
+    }
   };
 
   return (
