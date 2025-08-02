@@ -120,12 +120,14 @@ const About = () => {
 
   return (
     <Layout>
-      <div className="font-mono overflow-hidden">
+      <div className="overflow-hidden">
         {/* Animated background elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-32 h-32 bg-tech-accent/5 rounded-full animate-float"></div>
           <div className="absolute top-1/2 right-20 w-24 h-24 bg-primary/5 rounded-full animate-float animation-delay-1000"></div>
           <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-tech-accent/10 rounded-full animate-float animation-delay-2000"></div>
+          <div className="absolute top-32 right-1/3 w-40 h-40 bg-tech-accent/3 rounded-full animate-pulse animation-delay-3000"></div>
+          <div className="absolute bottom-20 right-10 w-20 h-20 bg-primary/10 rounded-full animate-bounce animation-delay-4000"></div>
         </div>
 
         {/* Hero Section */}
