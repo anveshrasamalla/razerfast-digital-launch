@@ -98,38 +98,78 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Work Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{
-      backgroundColor: "#F5F4F1"
-    }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-4">
-              OUR WORK
+      {/* Portfolio Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left Project - Woolworths */}
+            <div className="group cursor-pointer">
+              <div className="relative overflow-hidden rounded-3xl mb-8">
+                <div className="absolute top-6 left-6 z-10 flex gap-3">
+                  <Badge className="bg-black/80 text-white border-white/20 hover:bg-black/90">
+                    RETAIL
+                  </Badge>
+                  <Badge className="bg-black/80 text-white border-white/20 hover:bg-black/90">
+                    E-COMMERCE
+                  </Badge>
+                </div>
+                <img 
+                  src="/lovable-uploads/99dfd55f-9cee-46e1-a6d7-21ebfc3c9b96.png" 
+                  alt="Woolworths Project"
+                  className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              
+              <div className="space-y-6">
+                <div className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase">
+                  WOOLWORTHS
+                </div>
+                <h3 className="text-4xl md:text-5xl font-light text-white leading-tight">
+                  Delivering multiple successful projects for one of South
+                </h3>
+              </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-medium text-foreground">
-              Our Work
-            </h2>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8 bg-gradient-to-br from-gray-50 to-gray-100 border-0 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-2xl font-medium text-foreground mb-2">AutoCare Pro</h3>
-              <p className="text-muted-foreground mb-4">Complete automotive service platform</p>
-              <Badge variant="secondary" className="bg-gray-800 text-white">Automotive</Badge>
-            </Card>
-
-            <Card className="p-8 bg-gradient-to-br from-yellow-50 to-orange-50 border-0 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-2xl font-medium text-foreground mb-2">Café Blend</h3>
-              <p className="text-muted-foreground mb-4">Modern café experience</p>
-              <Badge variant="secondary" className="bg-gray-800 text-white">Food & Beverage</Badge>
-            </Card>
-
-            <Card className="p-8 bg-gradient-to-br from-green-50 to-emerald-50 border-0 hover:shadow-lg transition-all duration-300 md:col-span-1">
-              <h3 className="text-2xl font-medium text-foreground mb-2">FreshMart Online</h3>
-              <p className="text-muted-foreground mb-4">Grocery delivery platform</p>
-              <Badge variant="secondary" className="bg-gray-800 text-white">E-Commerce</Badge>
-            </Card>
+            {/* Right Project - Vodacom */}
+            <div className="group cursor-pointer">
+              <div className="relative overflow-hidden rounded-3xl mb-8">
+                <div className="absolute top-6 left-6 z-10 flex gap-3">
+                  <Badge className="bg-black/80 text-white border-white/20 hover:bg-black/90">
+                    RESEARCH
+                  </Badge>
+                  <Badge className="bg-black/80 text-white border-white/20 hover:bg-black/90">
+                    MOBILE APP
+                  </Badge>
+                </div>
+                <div className="w-full h-[500px] bg-gradient-to-br from-pink-400 via-purple-500 to-red-500 relative overflow-hidden">
+                  {/* Circular design elements */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative">
+                      {/* Concentric circles */}
+                      <div className="absolute inset-0 w-80 h-80 border-4 border-red-400/30 rounded-full animate-pulse"></div>
+                      <div className="absolute inset-4 w-72 h-72 border-4 border-red-400/50 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      <div className="absolute inset-8 w-64 h-64 border-4 border-red-400/70 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                      
+                      {/* Center portrait placeholder */}
+                      <div className="w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mt-20">
+                        <div className="w-32 h-32 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full flex items-center justify-center">
+                          <span className="text-black font-bold text-sm">SOON</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase">
+                  VODACOM
+                </div>
+                <h3 className="text-4xl md:text-5xl font-light text-white leading-tight">
+                  In-depth research and
+                </h3>
+              </div>
+            </div>
           </div>
         </div>
       </section>
