@@ -55,7 +55,7 @@ const Index = () => {
       {/* What We Do Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F5F4F1" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-4">
               OUR EXPERTISE
             </div>
@@ -68,8 +68,8 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+            <div className="text-center group animate-fade-in hover-scale transition-all duration-300 hover:bg-white/50 rounded-lg p-6 -m-6">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                 <Zap className="w-12 h-12 text-green-500" />
               </div>
               <h3 className="text-xl font-medium text-foreground mb-4">Web Development</h3>
@@ -78,8 +78,8 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+            <div className="text-center group animate-fade-in hover-scale transition-all duration-300 hover:bg-white/50 rounded-lg p-6 -m-6" style={{ animationDelay: '0.1s' }}>
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                 <ShoppingCart className="w-12 h-12 text-green-500" />
               </div>
               <h3 className="text-xl font-medium text-foreground mb-4">E-Commerce</h3>
@@ -88,8 +88,8 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+            <div className="text-center group animate-fade-in hover-scale transition-all duration-300 hover:bg-white/50 rounded-lg p-6 -m-6" style={{ animationDelay: '0.2s' }}>
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                 <BarChart3 className="w-12 h-12 text-green-500" />
               </div>
               <h3 className="text-xl font-medium text-foreground mb-4">Digital Strategy</h3>
