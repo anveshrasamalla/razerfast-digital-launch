@@ -107,6 +107,11 @@ const Blog = () => {
     }
   ];
 
+  const newsletter = {
+    title: "Stay Ahead of Digital Trends",
+    description: "Get weekly insights on technology, digital marketing, and business growth strategies delivered to your inbox.",
+    subscribers: "2,500+"
+  };
 
   return (
     <Layout>
@@ -213,6 +218,26 @@ const Blog = () => {
                 </div>
               </Card>
 
+              {/* Newsletter Signup */}
+              <Card className="p-6 bg-tech-accent text-tech-accent-foreground">
+                <h3 className="font-semibold mb-2">{newsletter.title}</h3>
+                <p className="text-sm mb-4 text-tech-accent-foreground/80">
+                  {newsletter.description}
+                </p>
+                <div className="mb-4">
+                  <Input 
+                    type="email" 
+                    placeholder="Your email address" 
+                    className="bg-tech-accent-foreground/10 border-tech-accent-foreground/20 text-tech-accent-foreground placeholder:text-tech-accent-foreground/60"
+                  />
+                </div>
+                <Button variant="hero" size="sm" className="w-full">
+                  Subscribe Now
+                </Button>
+                <p className="text-xs text-tech-accent-foreground/60 mt-2 text-center">
+                  Join {newsletter.subscribers} subscribers
+                </p>
+              </Card>
 
               {/* Popular Topics */}
               <Card className="p-6">
