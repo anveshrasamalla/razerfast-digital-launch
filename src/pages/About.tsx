@@ -22,57 +22,57 @@ import teamImage from "@/assets/team-collaboration.jpg";
 const About = () => {
   const values = [
     {
-      icon: Heart,
-      title: "People-First Approach",
-      description: "We believe technology should serve people, not the other way around. Every solution we create puts user experience at the center.",
+      icon: Zap,
+      title: "Simplicity",
+      description: "We cut through the tech jargon and deliver solutions that are easy to understand and use. No complexity, just results.",
       delay: "delay-100"
     },
     {
-      icon: Code2,
-      title: "Technical Excellence",
-      description: "We use cutting-edge technologies and best practices to deliver solutions that are fast, secure, and scalable.",
+      icon: Clock,
+      title: "Speed",
+      description: "Time is money in business. We deliver projects fast without compromising quality, getting you online quickly.",
       delay: "delay-200"
     },
     {
-      icon: Lightbulb,
-      title: "Innovation",
-      description: "We stay ahead of technology trends to provide our clients with innovative solutions that give them a competitive edge.",
+      icon: Shield,
+      title: "Transparency",
+      description: "Clear communication, honest timelines, and upfront pricing. No hidden fees, no surprises - just honest business.",
       delay: "delay-300"
     },
     {
-      icon: Shield,
-      title: "Trust & Transparency",
-      description: "Clear communication, honest timelines, and transparent pricing. We build long-term partnerships based on trust.",
+      icon: Users,
+      title: "Community",
+      description: "We're invested in the success of local businesses. Your growth strengthens our community, and we're here for the long haul.",
       delay: "delay-400"
     }
   ];
 
   const team = [
     {
-      name: "Alex Thompson",
+      name: "Alex Chen",
       role: "Founder & Lead Developer",
-      bio: "10+ years in web development. Former tech lead at major startup. Passionate about helping local businesses thrive.",
-      expertise: ["Full-Stack Development", "System Architecture", "Team Leadership"],
+      bio: "Former corporate tech consultant who saw the gap between enterprise solutions and small business needs. Founded Razerfast to bridge that divide.",
+      expertise: ["Full-Stack Development", "Business Strategy", "Team Leadership"],
       delay: "delay-100"
     },
     {
-      name: "Maria Garcia",
-      role: "UX/UI Design Director",
-      bio: "Award-winning designer with expertise in user experience. Believes great design should be invisible and intuitive.",
-      expertise: ["User Experience", "Interface Design", "Brand Identity"],
+      name: "Sarah Rodriguez",
+      role: "Creative Director",
+      bio: "Brand strategist and designer who believes every business has a unique story worth telling. Specializes in making complex ideas simple and beautiful.",
+      expertise: ["Brand Design", "User Experience", "Visual Strategy"],
       delay: "delay-200"
     },
     {
-      name: "James Chen",
-      role: "Digital Marketing Strategist",
-      bio: "Results-driven marketer specializing in local SEO and conversion optimization for small businesses.",
-      expertise: ["SEO Strategy", "Local Marketing", "Analytics"],
+      name: "Mike Thompson",
+      role: "Digital Growth Specialist",
+      bio: "Local marketing expert who helps businesses get found online. Obsessed with turning website visitors into loyal customers.",
+      expertise: ["Local SEO", "Conversion Optimization", "Analytics"],
       delay: "delay-300"
     },
     {
-      name: "Sarah Williams",
-      role: "Project Manager",
-      bio: "Ensures every project delivers on time and exceeds expectations. Master of communication and process optimization.",
+      name: "Lisa Park",
+      role: "Client Success Manager",
+      bio: "The bridge between our technical team and your business goals. Ensures every project exceeds expectations and deadlines.",
       expertise: ["Project Management", "Client Relations", "Quality Assurance"],
       delay: "delay-400"
     }
@@ -132,26 +132,26 @@ const About = () => {
         <section className="py-20 lg:py-32 relative" style={{ backgroundColor: '#A8C4B5' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 animate-fade-in">
-                <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4 animate-slide-in-left">
-                  ABOUT RAZERFAST
-                </div>
-                <Badge variant="outline" className="mb-6 animate-scale-in hover:scale-110 transition-transform duration-300">
-                  <Sparkles className="w-3 h-3 mr-1" />
-                  About Razerfast
-                </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-reveal-text">
-                  We're not just developers —{" "}
-                  <span className="text-tech-accent relative">
-                    we're growth partners
-                    <div className="absolute -inset-1 bg-tech-accent/20 blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </span>
-                </h1>
-                <p className="text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-in delay-300">
-                  Since 2020, we've been on a mission to level the playing field for local businesses. 
-                  We believe every small business deserves access to world-class digital solutions 
-                  that help them compete and thrive in the digital age.
-                </p>
+          <div className="space-y-6 animate-fade-in">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4 animate-slide-in-left">
+              ABOUT RAZERFAST
+            </div>
+            <Badge variant="outline" className="mb-6 animate-scale-in hover:scale-110 transition-transform duration-300">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Our Story
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-reveal-text">
+              Helping Local Businesses{" "}
+              <span className="text-tech-accent relative">
+                Go Digital Fast
+                <div className="absolute -inset-1 bg-tech-accent/20 blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-in delay-300">
+              Founded in 2020, Razerfast was born from a simple observation: too many great local businesses 
+              were being left behind in the digital revolution. We exist to change that by making powerful 
+              online presence accessible, affordable, and achievable for every small and medium business.
+            </p>
                 <div className="flex flex-col sm:flex-row gap-4 animate-slide-up delay-500">
                   <Button variant="default" size="lg" className="group hover:shadow-tech transition-all duration-300 hover:scale-105">
                     Meet Our Team
@@ -207,18 +207,18 @@ const About = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-fade-in">
               <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
-                OUR MISSION
+                OUR VALUES
               </div>
               <Badge variant="outline" className="mb-4 hover:bg-tech-accent/10 hover:border-tech-accent transition-all duration-300">
                 <Target className="w-3 h-3 mr-1" />
-                Our Mission
+                Our Values
               </Badge>
               <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-reveal-text">
-                Empowering Local Businesses Through Technology
+                Built on Simplicity, Speed, Transparency & Community
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in delay-200">
-                We bridge the gap between complex technology and practical business needs, 
-                making digital transformation accessible and profitable for every business we serve.
+                These four core values guide every decision we make and every solution we build. 
+                They're not just words on a wall - they're our commitment to you.
               </p>
             </div>
 
@@ -249,8 +249,12 @@ const About = () => {
                 Our Journey
               </Badge>
               <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-reveal-text">
-                Building Success Stories Since 2020
+                Our Vision: The Go-To Tech Partner for Non-Digital-First Businesses
               </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in delay-200">
+                We envision a future where every local business - from the corner cafe to the family auto shop - 
+                has the digital tools they need to compete and thrive in an increasingly connected world.
+              </p>
             </div>
 
             <div className="space-y-8">
@@ -315,6 +319,56 @@ const About = () => {
           </div>
         </section>
 
+          {/* Tech, Trust, and Transformation Section */}
+        <section className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 animate-fade-in">
+              <Badge variant="outline" className="mb-4 hover:bg-tech-accent/10 hover:border-tech-accent transition-all duration-300">
+                <Sparkles className="w-3 h-3 mr-1" />
+                Our Foundation
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-reveal-text">
+                Tech, Trust, and Transformation
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="text-center group animate-scale-reveal delay-100">
+                <div className="w-24 h-24 bg-gradient-to-br from-tech-accent/20 to-tech-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-tech transition-all duration-300">
+                  <Code2 className="w-12 h-12 text-tech-accent" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-tech-accent transition-colors">Tech</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Cutting-edge technology made simple. We use the latest tools and frameworks to build 
+                  fast, secure, and scalable solutions that grow with your business.
+                </p>
+              </div>
+              
+              <div className="text-center group animate-scale-reveal delay-200">
+                <div className="w-24 h-24 bg-gradient-to-br from-tech-accent/20 to-tech-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-tech transition-all duration-300">
+                  <Shield className="w-12 h-12 text-tech-accent" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-tech-accent transition-colors">Trust</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Transparent communication, honest pricing, and reliable delivery. We build lasting 
+                  partnerships based on mutual respect and shared success.
+                </p>
+              </div>
+              
+              <div className="text-center group animate-scale-reveal delay-300">
+                <div className="w-24 h-24 bg-gradient-to-br from-tech-accent/20 to-tech-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-tech transition-all duration-300">
+                  <TrendingUp className="w-12 h-12 text-tech-accent" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-tech-accent transition-colors">Transformation</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Real results that matter. We don't just build websites - we transform how your 
+                  business operates, connects with customers, and drives growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Enhanced CTA Section */}
         <section className="py-20 bg-gradient-hero text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-tech-accent/20"></div>
@@ -327,14 +381,14 @@ const About = () => {
                 <Target className="w-10 h-10 text-tech-accent" />
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 animate-reveal-text">
-                Ready to Work with Us?
+                Ready to Transform Your Business?
               </h2>
               <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-200">
-                Let's discuss how we can help your business achieve its digital transformation goals.
+                Join the hundreds of local businesses that have chosen Razerfast as their digital growth partner.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-400">
                 <Button variant="default" size="xl" className="group bg-tech-accent text-tech-accent-foreground hover:bg-tech-accent/90 hover:shadow-tech hover:scale-105 transition-all duration-300">
-                  Start Your Project
+                  Start Your Journey
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                 </Button>
                 <Button variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground hover:scale-105 transition-all duration-300">
