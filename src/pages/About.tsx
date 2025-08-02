@@ -239,43 +239,7 @@ const About = () => {
         </section>
 
         {/* Enhanced Team Section */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 animate-fade-in">
-              <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
-                MEET THE TEAM
-              </div>
-              <Badge variant="outline" className="mb-4 hover:bg-tech-accent/10 hover:border-tech-accent transition-all duration-300">
-                <Users className="w-3 h-3 mr-1" />
-                Meet the Team
-              </Badge>
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 animate-reveal-text">
-                The Experts Behind Your Success
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in delay-200">
-                Our diverse team brings together years of experience in technology, design, 
-                marketing, and business strategy.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member, index) => <Card key={index} className={`p-6 hover:shadow-tech transition-all duration-500 group border-0 bg-card/50 backdrop-blur-sm hover:bg-card hover:scale-105 animate-scale-reveal ${member.delay}`}>
-                  <div className="w-20 h-20 bg-tech-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-tech-accent/20 group-hover:scale-110 transition-all duration-300 relative overflow-hidden">
-                    <Users className="w-10 h-10 text-tech-accent relative z-10" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-tech-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1 text-center group-hover:text-tech-accent transition-colors duration-300">{member.name}</h3>
-                  <p className="text-tech-accent text-center mb-4 font-medium">{member.role}</p>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{member.bio}</p>
-                  <div className="space-y-1">
-                    {member.expertise.map((skill, idx) => <Badge key={idx} variant="secondary" className="text-xs mr-1 mb-1 hover:bg-tech-accent/20 hover:text-tech-accent transition-all duration-300">
-                        {skill}
-                      </Badge>)}
-                  </div>
-                </Card>)}
-            </div>
-          </div>
-        </section>
+        
 
         {/* Enhanced CTA Section */}
         <section className="py-20 bg-gradient-hero text-primary-foreground relative overflow-hidden">
