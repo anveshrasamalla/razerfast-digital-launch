@@ -56,46 +56,68 @@ const Index = () => {
       <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F5F4F1" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-4">
-              OUR EXPERTISE
-            </div>
             <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-6">
               What We Do
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive digital solutions to help your business thrive online
+              Razerfast empowers small and medium businesses with:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center group animate-fade-in hover-scale transition-all duration-300 hover:bg-white/50 rounded-lg p-6 -m-6">
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <Zap className="w-12 h-12 text-green-500" />
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Image */}
+            <div className="animate-fade-in">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg aspect-square flex items-center justify-center group hover:scale-105 transition-transform duration-300">
+                <div className="text-6xl text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                  💻
+                </div>
               </div>
-              <h3 className="text-xl font-medium text-foreground mb-4">Web Development</h3>
-              <p className="text-muted-foreground">
-                Modern, responsive websites that convert visitors into customers
-              </p>
             </div>
-            
-            <div className="text-center group animate-fade-in hover-scale transition-all duration-300 hover:bg-white/50 rounded-lg p-6 -m-6" style={{ animationDelay: '0.1s' }}>
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <ShoppingCart className="w-12 h-12 text-green-500" />
+
+            {/* Right Column - Content */}
+            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4 group hover:bg-white/50 rounded-lg p-4 -m-4 transition-all duration-300">
+                  <span className="text-2xl">🧑‍💻</span>
+                  <div>
+                    <h3 className="text-xl font-medium text-foreground mb-2">Website Design & Development</h3>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group hover:bg-white/50 rounded-lg p-4 -m-4 transition-all duration-300">
+                  <span className="text-2xl">🚀</span>
+                  <div>
+                    <h3 className="text-xl font-medium text-foreground mb-2">Brand Positioning & Visual Identity</h3>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group hover:bg-white/50 rounded-lg p-4 -m-4 transition-all duration-300">
+                  <span className="text-2xl">📊</span>
+                  <div>
+                    <h3 className="text-xl font-medium text-foreground mb-2">Local SEO & Google Listings</h3>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group hover:bg-white/50 rounded-lg p-4 -m-4 transition-all duration-300">
+                  <span className="text-2xl">🔁</span>
+                  <div>
+                    <h3 className="text-xl font-medium text-foreground mb-2">Tech Automation & CRM Setup</h3>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 group hover:bg-white/50 rounded-lg p-4 -m-4 transition-all duration-300">
+                  <span className="text-2xl">🔧</span>
+                  <div>
+                    <h3 className="text-xl font-medium text-foreground mb-2">Digital Strategy Consulting</h3>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-muted-foreground/20">
+                  <p className="text-lg font-medium text-foreground">
+                    Everything you need to go from offline to online — fast.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-medium text-foreground mb-4">E-Commerce</h3>
-              <p className="text-muted-foreground">
-                Complete online stores with payment processing and inventory management
-              </p>
-            </div>
-            
-            <div className="text-center group animate-fade-in hover-scale transition-all duration-300 hover:bg-white/50 rounded-lg p-6 -m-6" style={{ animationDelay: '0.2s' }}>
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <BarChart3 className="w-12 h-12 text-green-500" />
-              </div>
-              <h3 className="text-xl font-medium text-foreground mb-4">Digital Strategy</h3>
-              <p className="text-muted-foreground">
-                Data-driven strategies to maximize your online presence and ROI
-              </p>
             </div>
           </div>
         </div>
