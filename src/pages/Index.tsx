@@ -4,14 +4,27 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
 import { ArrowRight, Play, CheckCircle, Star, TrendingUp, Users, Zap, ShoppingCart, BarChart3 } from "lucide-react";
+import caseStudy1 from "@/assets/case-study-1.jpg";
+import caseStudy2 from "@/assets/case-study-2.jpg";
+import caseStudy3 from "@/assets/case-study-3.jpg";
+import caseStudy4 from "@/assets/case-study-4.jpg";
+import caseStudy5 from "@/assets/case-study-5.jpg";
 const Index = () => {
   const [currentWord, setCurrentWord] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
   const words = ["Visible", "Trusted", "Automated", "Optimized", "Digital"];
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWord(prev => (prev + 1) % words.length);
     }, 2000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return <Layout>
       <style>
@@ -87,9 +100,26 @@ const Index = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+        {/* Parallax Background Elements */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            transform: `translateY(${scrollY * 0.3}px)`,
+            background: 'radial-gradient(circle at 20% 50%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 80% 20%, #8b5cf6 0%, transparent 50%)'
+          }}
+        />
+        <div 
+          className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"
+          style={{ transform: `translateY(${scrollY * -0.2}px)` }}
+        />
+        <div 
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl"
+          style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+        />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
             <div className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase mb-4">
               CASE STUDIES
             </div>
@@ -100,91 +130,131 @@ const Index = () => {
 
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             {/* Case Study 1 */}
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl mb-6">
-                <div className="w-full h-80 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                  <div className="text-gray-500">Project Image</div>
-                </div>
-                <div className="absolute top-4 left-4">
+            <div className="group cursor-pointer animate-fade-in hover-scale">
+              <div className="relative overflow-hidden rounded-2xl mb-6 bg-gradient-to-br from-gray-900 to-gray-800">
+                <div className="absolute top-4 left-4 z-10">
                   <Badge className="bg-black/80 text-white border-white/20">Retail</Badge>
                 </div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={caseStudy1}
+                    alt="E-commerce Platform"
+                    className="w-full h-80 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="text-white text-sm">View Details →</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-medium text-white mb-2">
+              <h3 className="text-xl font-medium text-white mb-2 transition-colors duration-300 group-hover:text-blue-400">
                 103% conversion increase in a Shopify store with menswear apparel
               </h3>
-              <p className="text-blue-400 hover:text-blue-300">Case study →</p>
+              <p className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Case study →</p>
             </div>
 
             {/* Case Study 2 */}
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl mb-6">
-                <div className="w-full h-80 bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center">
-                  <div className="text-white">Mobile App Design</div>
-                </div>
-                <div className="absolute top-4 left-4">
+            <div className="group cursor-pointer animate-fade-in hover-scale" style={{ animationDelay: '0.1s' }}>
+              <div className="relative overflow-hidden rounded-2xl mb-6 bg-gradient-to-br from-purple-900 to-blue-900">
+                <div className="absolute top-4 left-4 z-10">
                   <Badge className="bg-black/80 text-white border-white/20">Electric Mobility</Badge>
                 </div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={caseStudy2}
+                    alt="Mobile App Development"
+                    className="w-full h-80 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="text-white text-sm">View Details →</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-medium text-white mb-2">
+              <h3 className="text-xl font-medium text-white mb-2 transition-colors duration-300 group-hover:text-purple-400">
                 Enhanced electric scooter experience with an innovative mobile app
               </h3>
-              <p className="text-blue-400 hover:text-blue-300">Case study →</p>
+              <p className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Case study →</p>
             </div>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
             {/* Case Study 3 */}
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl mb-6">
-                <div className="w-full h-60 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
-                  <div className="text-white">Website Design</div>
-                </div>
-                <div className="absolute top-4 left-4">
+            <div className="group cursor-pointer animate-fade-in hover-scale" style={{ animationDelay: '0.2s' }}>
+              <div className="relative overflow-hidden rounded-2xl mb-6 bg-gradient-to-br from-green-900 to-blue-900">
+                <div className="absolute top-4 left-4 z-10">
                   <Badge className="bg-black/80 text-white border-white/20">Information Technology</Badge>
                 </div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={caseStudy3}
+                    alt="Cybersecurity Website"
+                    className="w-full h-60 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="text-white text-sm">View Details →</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">
+              <h3 className="text-lg font-medium text-white mb-2 transition-colors duration-300 group-hover:text-green-400">
                 Lightweight and easy-to-read website for a cybersecurity market leader
               </h3>
-              <p className="text-blue-400 hover:text-blue-300">Case study →</p>
+              <p className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Case study →</p>
             </div>
 
             {/* Case Study 4 */}
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl mb-6">
-                <div className="w-full h-60 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
-                  <div className="text-white">Sustainability</div>
-                </div>
-                <div className="absolute top-4 left-4">
+            <div className="group cursor-pointer animate-fade-in hover-scale" style={{ animationDelay: '0.3s' }}>
+              <div className="relative overflow-hidden rounded-2xl mb-6 bg-gradient-to-br from-orange-900 to-red-900">
+                <div className="absolute top-4 left-4 z-10">
                   <Badge className="bg-black/80 text-white border-white/20">Technology</Badge>
                 </div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={caseStudy4}
+                    alt="Sustainability Platform"
+                    className="w-full h-60 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-orange-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="text-white text-sm">View Details →</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">
+              <h3 className="text-lg font-medium text-white mb-2 transition-colors duration-300 group-hover:text-orange-400">
                 Unique website with a beautiful presentation of sustainability-oriented ideas
               </h3>
-              <p className="text-blue-400 hover:text-blue-300">Case study →</p>
+              <p className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Case study →</p>
             </div>
 
             {/* Case Study 5 */}
-            <div className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl mb-6">
-                <div className="w-full h-60 bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center">
-                  <div className="text-white">E-commerce</div>
-                </div>
-                <div className="absolute top-4 left-4">
+            <div className="group cursor-pointer animate-fade-in hover-scale" style={{ animationDelay: '0.4s' }}>
+              <div className="relative overflow-hidden rounded-2xl mb-6 bg-gradient-to-br from-pink-900 to-purple-900">
+                <div className="absolute top-4 left-4 z-10">
                   <Badge className="bg-black/80 text-white border-white/20">Technology</Badge>
                 </div>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={caseStudy5}
+                    alt="E-commerce Innovation"
+                    className="w-full h-60 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-pink-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="text-white text-sm">View Details →</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">
+              <h3 className="text-lg font-medium text-white mb-2 transition-colors duration-300 group-hover:text-pink-400">
                 Lightning-fast headless Shopify with innovative wearables
               </h3>
-              <p className="text-blue-400 hover:text-blue-300">Case study →</p>
+              <p className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Case study →</p>
             </div>
           </div>
 
-          <div className="text-center">
+          <div className="text-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <h3 className="text-2xl font-light text-white mb-6">Hungry for more examples?</h3>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105">
               Check Our Case Studies
             </Button>
           </div>
