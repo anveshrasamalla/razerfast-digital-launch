@@ -34,7 +34,7 @@ const Index = () => {
           </div>
 
           {/* Main headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight tracking-wide mb-8 flex flex-wrap justify-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-tight tracking-wide mb-8 flex flex-wrap justify-center">
             Let’s make your business&nbsp;
             <span
               className="relative w-[150px] inline-block text-left"
