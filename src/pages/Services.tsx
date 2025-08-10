@@ -186,7 +186,7 @@ const Services = () => {
                 <TabsTrigger
                   key={service.id}
                   value={service.id}
-                  className="flex flex-col items-center p-6 data-[state=active]:bg-tech-accent data-[state=active]:text-tech-accent-foreground"
+                  className="group relative flex flex-col items-center p-6 rounded-2xl border bg-card/80 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-none hover:shadow-card transition-all duration-300 hover:-translate-y-0.5 ring-1 ring-transparent data-[state=active]:ring-tech-accent/50 data-[state=active]:bg-tech-accent/15 data-[state=active]:text-foreground data-[state=active]:shadow-tech before:absolute before:inset-x-6 before:bottom-2 before:h-0.5 before:bg-tech-accent before:origin-left before:scale-x-0 before:transition-transform before:duration-300 data-[state=active]:before:scale-x-100"
                 >
                   <service.icon className="w-8 h-8 mb-2" />
                   <span className="font-semibold">{service.title}</span>
@@ -197,26 +197,31 @@ const Services = () => {
 
             {mainServices.map((service) => (
               <TabsContent key={service.id} value={service.id} className="mt-12">
-                <Card className="overflow-hidden">
-                  <div className="grid grid-cols-1 lg:grid-cols-2">
+                <Card className="relative overflow-hidden rounded-3xl border bg-card shadow-card hover:shadow-tech transition-all duration-500 group">
+                  {/* Decorative animated accents */}
+                  <div className="pointer-events-none absolute inset-0">
+                    <div className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-tech-accent/20 blur-3xl animate-float" />
+                    <div className="absolute bottom-[-2rem] left-1/3 h-32 w-32 rounded-full bg-primary/10 blur-2xl animate-glow" />
+                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 relative">
                     <div className="p-8 lg:p-12">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 bg-tech-accent/10 rounded-lg flex items-center justify-center">
+                        <div className="w-16 h-16 bg-tech-accent/10 rounded-2xl ring-1 ring-tech-accent/30 flex items-center justify-center shadow-inner animate-scale-reveal transition-transform duration-300 group-hover:scale-105">
                           <service.icon className="w-8 h-8 text-tech-accent" />
                         </div>
                         <div>
-                          <h2 className="text-3xl font-bold text-foreground">{service.title}</h2>
-                          <p className="text-tech-accent">{service.subtitle}</p>
+                          <h2 className="text-3xl font-bold text-foreground animate-fade-in-up">{service.title}</h2>
+                          <p className="text-tech-accent animate-fade-in-up" style={{ animationDelay: "120ms" }}>{service.subtitle}</p>
                         </div>
                       </div>
                       
-                      <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                      <p className="text-muted-foreground mb-8 text-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: "180ms" }}>
                         {service.description}
                       </p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2">
+                          <div key={idx} className="flex items-center gap-2 animate-fade-in-up" style={{ animationDelay: `${idx * 80 + 220}ms` }}>
                             <CheckCircle className="w-5 h-5 text-tech-accent flex-shrink-0" />
                             <span className="text-sm">{feature}</span>
                           </div>
@@ -224,18 +229,21 @@ const Services = () => {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4">
-                        <Button variant="cta" size="lg" className="group">
+                        <Button variant="cta" size="lg" className="group transition-transform duration-300 hover:scale-[1.02]">
                           Get Started
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-                        <Button variant="minimal" size="lg">
+                        <Button variant="minimal" size="lg" className="transition-transform duration-300 hover:scale-[1.02]">
                           Learn More
                         </Button>
                       </div>
                     </div>
 
-                    <div className="bg-muted/50 p-8 lg:p-12 flex flex-col justify-center">
-                      <div className="space-y-6">
+                    <div className="relative bg-muted/50 p-8 lg:p-12 flex flex-col justify-center rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl overflow-hidden">
+                      <div className="pointer-events-none absolute inset-0">
+                        <div className="absolute right-[-20%] top-[-20%] h-64 w-64 rounded-full bg-tech-accent/15 blur-3xl animate-float" />
+                      </div>
+                      <div className="space-y-6 animate-slide-in-right">
                         <div>
                           <h4 className="font-semibold mb-2 flex items-center gap-2">
                             <Zap className="w-5 h-5 text-tech-accent" />
@@ -243,7 +251,7 @@ const Services = () => {
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {service.technologies.map((tech, idx) => (
-                              <Badge key={idx} variant="secondary">{tech}</Badge>
+                              <Badge key={idx} variant="secondary" className="transition-transform hover:scale-105">{tech}</Badge>
                             ))}
                           </div>
                         </div>
