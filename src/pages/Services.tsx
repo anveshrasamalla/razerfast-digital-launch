@@ -18,12 +18,6 @@ import {
   Users
 } from "lucide-react";
 
-import { useState, useMemo } from "react";
-import ServiceGradientBackground from "@/components/effects/ServiceGradientBackground";
-import ServiceFlipTrigger from "@/components/services/ServiceFlipTrigger";
-import AnimatedTimeline from "@/components/services/AnimatedTimeline";
-import ServiceLottie from "@/components/services/ServiceLottie";
-
 const Services = () => {
   const mainServices = [
     {
@@ -155,13 +149,6 @@ const Services = () => {
       description: "Smooth deployment and launch with ongoing support to ensure your success."
     }
   ];
-  const [activeService, setActiveService] = useState<string>("web");
-  const lottieMap: Record<string, string> = {
-    web: "https://cdn.lordicon.com/lusqsztk.json",
-    ecommerce: "https://cdn.lordicon.com/abvsiyby.json",
-    mobile: "https://cdn.lordicon.com/oezixobx.json",
-    marketing: "https://cdn.lordicon.com/dangdpgv.json",
-  };
 
   return (
     <Layout>
@@ -191,50 +178,45 @@ const Services = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-20" style={{ backgroundColor: "#E6D7F0" }}>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ServiceGradientBackground activeKey={activeService} />
-          <Tabs value={activeService} onValueChange={setActiveService} className="space-y-12 relative">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Tabs defaultValue="web" className="space-y-12">
             <TabsList className="grid grid-cols-1 md:grid-cols-4 w-full h-auto gap-4 bg-transparent">
-              {mainServices.map((s) => (
-                <ServiceFlipTrigger
-                  key={s.id}
-                  value={s.id}
-                  title={s.title}
-                  subtitle={s.subtitle}
-                  Icon={s.icon}
-                  lottieUrl={lottieMap[s.id]}
-                />
+              {mainServices.map((service) => (
+                <TabsTrigger
+                  key={service.id}
+                  value={service.id}
+                  className="flex flex-col items-center p-6 data-[state=active]:bg-tech-accent data-[state=active]:text-tech-accent-foreground"
+                >
+                  <service.icon className="w-8 h-8 mb-2" />
+                  <span className="font-semibold">{service.title}</span>
+                  <span className="text-xs opacity-70">{service.subtitle}</span>
+                </TabsTrigger>
               ))}
             </TabsList>
 
             {mainServices.map((service) => (
               <TabsContent key={service.id} value={service.id} className="mt-12">
-                <Card className="relative overflow-hidden rounded-3xl border bg-card shadow-card hover:shadow-tech transition-all duration-500 group">
-                  {/* Decorative animated accents */}
-                  <div className="pointer-events-none absolute inset-0">
-                    <div className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-tech-accent/20 blur-3xl animate-float" />
-                    <div className="absolute bottom-[-2rem] left-1/3 h-32 w-32 rounded-full bg-primary/10 blur-2xl animate-glow" />
-                  </div>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 relative">
-                    <div className="p-8 lg:p-12 lg:sticky lg:top-24">
+                <Card className="overflow-hidden">
+                  <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="p-8 lg:p-12">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 bg-tech-accent/10 rounded-2xl ring-1 ring-tech-accent/30 flex items-center justify-center shadow-inner animate-scale-reveal transition-transform duration-300 group-hover:scale-105">
+                        <div className="w-16 h-16 bg-tech-accent/10 rounded-lg flex items-center justify-center">
                           <service.icon className="w-8 h-8 text-tech-accent" />
                         </div>
                         <div>
-                          <h2 className="text-3xl font-bold text-foreground animate-fade-in-up">{service.title}</h2>
-                          <p className="text-tech-accent animate-fade-in-up" style={{ animationDelay: "120ms" }}>{service.subtitle}</p>
+                          <h2 className="text-3xl font-bold text-foreground">{service.title}</h2>
+                          <p className="text-tech-accent">{service.subtitle}</p>
                         </div>
                       </div>
                       
-                      <p className="text-muted-foreground mb-8 text-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: "180ms" }}>
+                      <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
                         {service.description}
                       </p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2 animate-fade-in-up" style={{ animationDelay: `${idx * 80 + 220}ms` }}>
+                          <div key={idx} className="flex items-center gap-2">
                             <CheckCircle className="w-5 h-5 text-tech-accent flex-shrink-0" />
                             <span className="text-sm">{feature}</span>
                           </div>
@@ -242,24 +224,18 @@ const Services = () => {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4">
-                        <Button variant="cta" size="lg" className="group transition-transform duration-300 hover:scale-[1.02]">
+                        <Button variant="cta" size="lg" className="group">
                           Get Started
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-                        <Button variant="minimal" size="lg" className="transition-transform duration-300 hover:scale-[1.02]">
+                        <Button variant="minimal" size="lg">
                           Learn More
                         </Button>
                       </div>
                     </div>
 
-                    <div className="relative bg-muted/50 p-8 lg:p-12 flex flex-col justify-center rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl overflow-hidden">
-                      <div className="pointer-events-none absolute inset-0">
-                        <div className="absolute right-[-20%] top-[-20%] h-64 w-64 rounded-full bg-tech-accent/15 blur-3xl animate-float" />
-                      </div>
-                      <div className="space-y-6 animate-slide-in-right">
-                        <div className="flex justify-center">
-                          <ServiceLottie url={lottieMap[service.id]} className="w-28 h-28 mb-2" hoverPlay loop />
-                        </div>
+                    <div className="bg-muted/50 p-8 lg:p-12 flex flex-col justify-center">
+                      <div className="space-y-6">
                         <div>
                           <h4 className="font-semibold mb-2 flex items-center gap-2">
                             <Zap className="w-5 h-5 text-tech-accent" />
@@ -267,7 +243,7 @@ const Services = () => {
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {service.technologies.map((tech, idx) => (
-                              <Badge key={idx} variant="secondary" className="transition-transform hover:scale-105">{tech}</Badge>
+                              <Badge key={idx} variant="secondary">{tech}</Badge>
                             ))}
                           </div>
                         </div>
@@ -275,18 +251,18 @@ const Services = () => {
                         <div>
                           <h4 className="font-semibold mb-2 flex items-center gap-2">
                             <Clock className="w-5 h-5 text-tech-accent" />
-                            Project Timeline
+                            Timeline
                           </h4>
-                          <AnimatedTimeline
-                            steps={[
-                              { title: "Plan & Strategy" },
-                              { title: "Design" },
-                              { title: "Build" },
-                              { title: "QA & Iterate" },
-                              { title: `Launch • ${service.timeline}` },
-                              { title: `From ${service.startingPrice}` },
-                            ]}
-                          />
+                          <p className="text-muted-foreground">{service.timeline}</p>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold mb-2 flex items-center gap-2">
+                            <BarChart3 className="w-5 h-5 text-tech-accent" />
+                            Investment
+                          </h4>
+                          <p className="text-2xl font-bold text-tech-accent">{service.startingPrice}</p>
+                          <p className="text-sm text-muted-foreground">Custom pricing based on your needs</p>
                         </div>
                       </div>
                     </div>
