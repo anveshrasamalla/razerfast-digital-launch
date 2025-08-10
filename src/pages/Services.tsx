@@ -22,6 +22,7 @@ import { useState, useMemo } from "react";
 import ServiceGradientBackground from "@/components/effects/ServiceGradientBackground";
 import ServiceFlipTrigger from "@/components/services/ServiceFlipTrigger";
 import AnimatedTimeline from "@/components/services/AnimatedTimeline";
+import ServiceLottie from "@/components/services/ServiceLottie";
 
 const Services = () => {
   const mainServices = [
@@ -190,15 +191,16 @@ const Services = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Tabs defaultValue="web" className="space-y-12">
+      <section className="py-20" style={{ backgroundColor: "#E6D7F0" }}>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ServiceGradientBackground activeKey={activeService} />
+          <Tabs value={activeService} onValueChange={setActiveService} className="space-y-12 relative">
             <TabsList className="grid grid-cols-1 md:grid-cols-4 w-full h-auto gap-4 bg-transparent">
               {mainServices.map((service) => (
                 <TabsTrigger
                   key={service.id}
                   value={service.id}
-                  className="group relative flex flex-col items-center p-6 rounded-2xl border bg-card/80 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-none hover:shadow-card transition-all duration-300 hover:-translate-y-0.5 ring-1 ring-transparent data-[state=active]:ring-tech-accent/50 data-[state=active]:bg-tech-accent/15 data-[state=active]:text-foreground data-[state=active]:shadow-tech before:absolute before:inset-x-6 before:bottom-2 before:h-0.5 before:bg-tech-accent before:origin-left before:scale-x-0 before:transition-transform before:duration-300 data-[state=active]:before:scale-x-100"
+                  className="group relative flex flex-col items-center text-center p-6 rounded-[22px] border bg-card shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-0.5 data-[state=active]:ring-1 data-[state=active]:ring-tech-accent/50 data-[state=active]:bg-background data-[state=active]:shadow-tech"
                 >
                   <service.icon className="w-8 h-8 mb-2" />
                   <span className="font-semibold">{service.title}</span>
@@ -256,6 +258,9 @@ const Services = () => {
                         <div className="absolute right-[-20%] top-[-20%] h-64 w-64 rounded-full bg-tech-accent/15 blur-3xl animate-float" />
                       </div>
                       <div className="space-y-6 animate-slide-in-right">
+                        <div className="flex justify-center">
+                          <ServiceLottie url={lottieMap[service.id]} className="w-28 h-28 mb-2" hoverPlay loop />
+                        </div>
                         <div>
                           <h4 className="font-semibold mb-2 flex items-center gap-2">
                             <Zap className="w-5 h-5 text-tech-accent" />
