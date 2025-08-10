@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import razerfastLogo from "@/assets/razerfast-logo.png";
 
@@ -9,6 +9,22 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof window !== 'undefined') {
+      return (localStorage.getItem('theme') as 'light' | 'dark') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.add('theme-transition');
+    root.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
+    const t = setTimeout(() => root.classList.remove('theme-transition'), 400);
+    return () => clearTimeout(t);
+  }, [theme]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,11 +84,19 @@ const Navigation = () => {
             </nav>
           </div>
 
-          {/* Right Side - Green Circle like Humaan's face */}
+          {/* Right Side - Theme Toggle in Accent Circle */}
           <div className="hidden lg:flex items-center">
-            <div className="w-10 h-10 bg-tech-accent rounded-full flex items-center justify-center">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
-            </div>
+            <button
+              aria-label="Toggle theme"
+              className="w-10 h-10 bg-tech-accent rounded-full flex items-center justify-center shadow-card hover:shadow-tech transition"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-5 h-5 text-foreground" />
+              ) : (
+                <Moon className="w-5 h-5 text-foreground" />
+              )}
+            </button>
           </div>
 
           {/* Mobile menu button */}

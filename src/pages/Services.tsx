@@ -18,6 +18,10 @@ import {
   Users
 } from "lucide-react";
 
+import CursorSparkle from "@/components/effects/CursorSparkle";
+import Reveal from "@/components/effects/Reveal";
+import ParallaxBlob from "@/components/effects/ParallaxBlob";
+
 const Services = () => {
   const mainServices = [
     {
@@ -155,25 +159,38 @@ const Services = () => {
       <style>
         {`.min-h-screen { background: #E6D7F0 !important; }`}
       </style>
+      <CursorSparkle />
       {/* Hero Section */}
-      <section className="py-20 lg:py-32" style={{ backgroundColor: '#E6D7F0' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
-            OUR SERVICES
-          </div>
-          <Badge variant="outline" className="mb-6">Our Services</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Complete Digital Solutions for{" "}
-            <span className="text-tech-accent">Every Business Need</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            From stunning websites to powerful e-commerce platforms, we provide end-to-end digital services 
-            that help local businesses compete and thrive in the digital marketplace.
-          </p>
-          <Button variant="cta" size="xl" className="group">
-            Get Free Consultation
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </Button>
+      <section className="relative overflow-hidden py-20 lg:py-32" style={{ backgroundColor: '#E6D7F0' }}>
+        <ParallaxBlob speed={-0.15} className="absolute -top-10 -right-10 h-56 w-56 bg-tech-accent/20 blur-3xl" />
+        <ParallaxBlob speed={0.12} className="absolute bottom-[-2rem] left-1/3 h-32 w-32 bg-primary/10 blur-2xl" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <Reveal animation="fade" delay={0}>
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              OUR SERVICES
+            </div>
+          </Reveal>
+          <Reveal animation="slide-up" delay={100}>
+            <Badge variant="outline" className="mb-6">Our Services</Badge>
+          </Reveal>
+          <Reveal animation="slide-up" delay={200}>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Complete Digital Solutions for{" "}
+              <span className="text-tech-accent text-gradient-animated">Every Business Need</span>
+            </h1>
+          </Reveal>
+          <Reveal animation="fade" delay={300}>
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              From stunning websites to powerful e-commerce platforms, we provide end-to-end digital services 
+              that help local businesses compete and thrive in the digital marketplace.
+            </p>
+          </Reveal>
+          <Reveal animation="slide-up" delay={400}>
+            <Button variant="cta" size="xl" className="group">
+              Get Free Consultation
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
+          </Reveal>
         </div>
       </section>
 
@@ -197,7 +214,7 @@ const Services = () => {
 
             {mainServices.map((service) => (
               <TabsContent key={service.id} value={service.id} className="mt-12">
-                <Card className="relative overflow-hidden rounded-3xl border bg-card shadow-card hover:shadow-tech transition-all duration-500 group">
+                <Card className="relative overflow-hidden rounded-3xl border bg-card shadow-card hover:shadow-tech transition-all duration-500 group transform-gpu hover:scale-[1.01]">
                   {/* Decorative animated accents */}
                   <div className="pointer-events-none absolute inset-0">
                     <div className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-tech-accent/20 blur-3xl animate-float" />
@@ -205,15 +222,17 @@ const Services = () => {
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 relative">
                     <div className="p-8 lg:p-12">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 bg-tech-accent/10 rounded-2xl ring-1 ring-tech-accent/30 flex items-center justify-center shadow-inner animate-scale-reveal transition-transform duration-300 group-hover:scale-105">
-                          <service.icon className="w-8 h-8 text-tech-accent" />
-                        </div>
-                        <div>
-                          <h2 className="text-3xl font-bold text-foreground animate-fade-in-up">{service.title}</h2>
-                          <p className="text-tech-accent animate-fade-in-up" style={{ animationDelay: "120ms" }}>{service.subtitle}</p>
-                        </div>
-                      </div>
+                        <Reveal animation="scale">
+                          <div className="flex items-center gap-4 mb-6">
+                            <div className="w-16 h-16 bg-tech-accent/10 rounded-2xl ring-1 ring-tech-accent/30 flex items-center justify-center shadow-inner transition-transform duration-300 group-hover:scale-105">
+                              <service.icon className="w-8 h-8 text-tech-accent" />
+                            </div>
+                            <div>
+                              <h2 className="text-3xl font-bold text-foreground">{service.title}</h2>
+                              <p className="text-tech-accent" style={{ animationDelay: "120ms" }}>{service.subtitle}</p>
+                            </div>
+                          </div>
+                        </Reveal>
                       
                       <p className="text-muted-foreground mb-8 text-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: "180ms" }}>
                         {service.description}
@@ -241,7 +260,7 @@ const Services = () => {
 
                     <div className="relative bg-muted/50 p-8 lg:p-12 flex flex-col justify-center rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl overflow-hidden">
                       <div className="pointer-events-none absolute inset-0">
-                        <div className="absolute right-[-20%] top-[-20%] h-64 w-64 rounded-full bg-tech-accent/15 blur-3xl animate-float" />
+                        <ParallaxBlob speed={-0.2} className="absolute right-[-20%] top-[-20%] h-64 w-64 bg-tech-accent/15 blur-3xl" />
                       </div>
                       <div className="space-y-6 animate-slide-in-right">
                         <div>
@@ -285,23 +304,25 @@ const Services = () => {
       {/* Additional Services */}
       <section className="py-20" style={{ backgroundColor: '#E6D7F0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
-              ADDITIONAL SERVICES
+          <Reveal animation="fade">
+            <div className="text-center mb-16">
+              <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+                ADDITIONAL SERVICES
+              </div>
+              <Badge variant="outline" className="mb-4">Additional Services</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                Supporting Services
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Comprehensive support services to ensure your digital presence is always optimized and performing at its best.
+              </p>
             </div>
-            <Badge variant="outline" className="mb-4">Additional Services</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Supporting Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive support services to ensure your digital presence is always optimized and performing at its best.
-            </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {additionalServices.map((service, index) => (
-              <Card key={index} className="p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-tech-accent/10 rounded-lg flex items-center justify-center mb-4">
+              <Card key={index} className="group p-6 rounded-2xl border bg-card/80 backdrop-blur hover:shadow-tech hover:scale-[1.02] transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-tech-accent/10 rounded-lg flex items-center justify-center mb-4 animate-scale-reveal" style={{ animationDelay: `${index * 80}ms` }}>
                   <service.icon className="w-6 h-6 text-tech-accent" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
@@ -315,26 +336,30 @@ const Services = () => {
       {/* Process Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
-              OUR PROCESS
+          <Reveal animation="fade">
+            <div className="text-center mb-16">
+              <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+                OUR PROCESS
+              </div>
+              <Badge variant="outline" className="mb-4">Our Process</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                How We Work
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Our proven 6-step process ensures every project is delivered on time, on budget, and exceeds expectations.
+              </p>
             </div>
-            <Badge variant="outline" className="mb-4">Our Process</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              How We Work
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our proven 6-step process ensures every project is delivered on time, on budget, and exceeds expectations.
-            </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {process.map((step, index) => (
-              <Card key={index} className="p-6 hover:shadow-card transition-all duration-300">
-                <div className="text-4xl font-bold text-tech-accent/20 mb-4">{step.step}</div>
-                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                <p className="text-muted-foreground text-sm">{step.description}</p>
-              </Card>
+              <Reveal animation="slide-up" delay={index * 80}>
+                <Card className="p-6 rounded-2xl border bg-card/80 backdrop-blur hover:shadow-tech hover:scale-[1.02] transition-transform duration-300">
+                  <div className="text-4xl font-bold text-tech-accent/20 mb-4">{step.step}</div>
+                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm">{step.description}</p>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -344,7 +369,7 @@ const Services = () => {
       <section className="py-20 bg-gradient-hero text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Zap className="w-16 h-16 text-tech-accent mx-auto mb-6" />
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient-animated">
             Ready to Get Started?
           </h2>
           <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
