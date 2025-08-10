@@ -416,21 +416,3 @@ All colors MUST be HSL.
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
-
-@keyframes gradient-pan {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-.text-gradient-animated {
-  background-image: var(--gradient-accent);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-pan 6s ease-in-out infinite alternate;
-}
-
-.theme-transition, .theme-transition * {
-  transition: background-color .4s ease, color .4s ease, border-color .4s ease, fill .4s ease, stroke .4s ease, box-shadow .4s ease;
-}

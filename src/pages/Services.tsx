@@ -18,20 +18,6 @@ import {
   Users
 } from "lucide-react";
 
-import { useState } from "react";
-import CursorSparkle from "@/components/effects/CursorSparkle";
-import Reveal from "@/components/effects/Reveal";
-import ParallaxBlob from "@/components/effects/ParallaxBlob";
-import FloatingShapes from "@/components/effects/FloatingShapes";
-import SectionDividerBlob from "@/components/effects/SectionDividerBlob";
-import TextReveal from "@/components/typography/TextReveal";
-import ServiceLottie from "@/components/services/ServiceLottie";
-import useCountUp from "@/hooks/useCountUp";
-import AnimatedBlobs from "@/components/effects/AnimatedBlobs";
-import mascotGlow from "@/assets/logo-neon-glow.png";
-import mascotBolt from "@/assets/logo-lightning-bolt.png";
-import mascotBoom from "@/assets/logo-sonic-boom.png";
-
 const Services = () => {
   const mainServices = [
     {
@@ -164,226 +150,158 @@ const Services = () => {
     }
   ];
 
-  const [activeService, setActiveService] = useState(mainServices[0].id);
-  const mascotByService: Record<string, string> = {
-    web: mascotGlow,
-    ecommerce: mascotBolt,
-    mobile: mascotBoom,
-    marketing: mascotGlow,
-  };
-  const lottieUrls: Record<string, string> = {
-    web: "https://cdn.lordicon.com/mrjuyheh.json",
-    ecommerce: "https://cdn.lordicon.com/pimvysaa.json",
-    mobile: "https://cdn.lordicon.com/ssvybplt.json",
-    marketing: "https://cdn.lordicon.com/aklfruoc.json",
-  };
-
-  const mascotSrc = mascotByService[activeService] || mascotGlow;
-
-  const Stat = ({ end, label, suffix = "" }: { end: number; label: string; suffix?: string }) => {
-    const { ref, value } = useCountUp<HTMLDivElement>({ end });
-    return (
-      <div className="rounded-2xl border bg-[hsl(var(--card)/0.6)] backdrop-blur p-6 text-center shadow-card hover:shadow-tech transition-shadow">
-        <div ref={ref} className="text-3xl md:text-4xl font-bold text-tech-accent">{value}{suffix}</div>
-        <div className="text-sm text-muted-foreground mt-2">{label}</div>
-      </div>
-    );
-  };
-
   return (
     <Layout>
       <style>
         {`.min-h-screen { background: #E6D7F0 !important; }`}
       </style>
-      <CursorSparkle />
-      <FloatingShapes />
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 lg:py-32" style={{ backgroundColor: '#E6D7F0' }}>
-        <ParallaxBlob speed={-0.15} className="absolute -top-10 -right-10 h-56 w-56 bg-tech-accent/20 blur-3xl" />
-        <ParallaxBlob speed={0.12} className="absolute bottom-[-2rem] left-1/3 h-32 w-32 bg-primary/10 blur-2xl" />
-        <AnimatedBlobs />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <button
-            onClick={() => document.documentElement.classList.toggle('dark')}
-            className="absolute right-4 top-4 text-xs px-3 py-1 rounded-full border bg-[hsl(var(--card)/0.6)] backdrop-blur shadow-card"
-            aria-label="Toggle theme"
-          >
-            Toggle theme
-          </button>
-          <Reveal animation="fade" delay={0}>
-            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
-              OUR SERVICES
-            </div>
-          </Reveal>
-          <Reveal animation="slide-up" delay={100}>
-            <Badge variant="outline" className="mb-6">Our Services</Badge>
-          </Reveal>
-          <Reveal animation="slide-up" delay={200}>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Complete Digital Solutions for{" "}
-              <span className="text-tech-accent text-gradient-animated">Every Business Need</span>
-            </h1>
-          </Reveal>
-          <Reveal animation="fade" delay={300}>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              From stunning websites to powerful e-commerce platforms, we provide end-to-end digital services 
-              that help local businesses compete and thrive in the digital marketplace.
-            </p>
-          </Reveal>
-          <Reveal animation="slide-up" delay={400}>
-            <Button variant="cta" size="xl" className="group">
-              Get Free Consultation
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
-          </Reveal>
+      <section className="py-20 lg:py-32" style={{ backgroundColor: '#E6D7F0' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+            OUR SERVICES
+          </div>
+          <Badge variant="outline" className="mb-6">Our Services</Badge>
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            Complete Digital Solutions for{" "}
+            <span className="text-tech-accent">Every Business Need</span>
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            From stunning websites to powerful e-commerce platforms, we provide end-to-end digital services 
+            that help local businesses compete and thrive in the digital marketplace.
+          </p>
+          <Button variant="cta" size="xl" className="group">
+            Get Free Consultation
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          </Button>
         </div>
       </section>
 
       {/* Main Services */}
-      <section className="relative overflow-hidden py-20">
-        <AnimatedBlobs />
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-9">
-              <Tabs value={activeService} onValueChange={setActiveService} className="space-y-12">
-                <TabsList className="grid grid-cols-1 md:grid-cols-4 w-full h-auto gap-4 bg-transparent">
-                  {mainServices.map((service) => (
-                    <TabsTrigger
-                      key={service.id}
-                      value={service.id}
-                      className="group relative flex flex-col items-center p-6 rounded-2xl border bg-[hsl(var(--card)/0.6)] backdrop-blur supports-[backdrop-filter]:bg-[hsl(var(--card)/0.5)] shadow-none hover:shadow-card transition-all duration-300 hover:-translate-y-0.5 ring-1 ring-transparent data-[state=active]:ring-tech-accent/50 data-[state=active]:bg-tech-accent/15 data-[state=active]:text-foreground data-[state=active]:shadow-tech before:absolute before:inset-x-6 before:bottom-2 before:h-0.5 before:bg-tech-accent before:origin-left before:scale-x-0 before:transition-transform before:duration-300 data-[state=active]:before:scale-x-100"
-                    >
-                      <service.icon className="w-8 h-8 mb-2" />
-                      <span className="font-semibold">{service.title}</span>
-                      <span className="text-xs opacity-70">{service.subtitle}</span>
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+          <Tabs defaultValue="web" className="space-y-12">
+            <TabsList className="grid grid-cols-1 md:grid-cols-4 w-full h-auto gap-4 bg-transparent">
+              {mainServices.map((service) => (
+                <TabsTrigger
+                  key={service.id}
+                  value={service.id}
+                  className="group relative flex flex-col items-center p-6 rounded-2xl border bg-card/80 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-none hover:shadow-card transition-all duration-300 hover:-translate-y-0.5 ring-1 ring-transparent data-[state=active]:ring-tech-accent/50 data-[state=active]:bg-tech-accent/15 data-[state=active]:text-foreground data-[state=active]:shadow-tech before:absolute before:inset-x-6 before:bottom-2 before:h-0.5 before:bg-tech-accent before:origin-left before:scale-x-0 before:transition-transform before:duration-300 data-[state=active]:before:scale-x-100"
+                >
+                  <service.icon className="w-8 h-8 mb-2" />
+                  <span className="font-semibold">{service.title}</span>
+                  <span className="text-xs opacity-70">{service.subtitle}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
 
-                {mainServices.map((service) => (
-                  <TabsContent key={service.id} value={service.id} className="mt-12">
-                    <Card className="relative overflow-hidden rounded-3xl border bg-card shadow-card hover:shadow-tech transition-all duration-500 group transform-gpu hover:scale-[1.01]">
-                      {/* Decorative animated accents */}
-                      <div className="pointer-events-none absolute inset-0">
-                        <div className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-tech-accent/20 blur-3xl animate-float" />
-                        <div className="absolute bottom-[-2rem] left-1/3 h-32 w-32 rounded-full bg-primary/10 blur-2xl" />
+            {mainServices.map((service) => (
+              <TabsContent key={service.id} value={service.id} className="mt-12">
+                <Card className="relative overflow-hidden rounded-3xl border bg-card shadow-card hover:shadow-tech transition-all duration-500 group">
+                  {/* Decorative animated accents */}
+                  <div className="pointer-events-none absolute inset-0">
+                    <div className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-tech-accent/20 blur-3xl animate-float" />
+                    <div className="absolute bottom-[-2rem] left-1/3 h-32 w-32 rounded-full bg-primary/10 blur-2xl animate-glow" />
+                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 relative">
+                    <div className="p-8 lg:p-12">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-16 h-16 bg-tech-accent/10 rounded-2xl ring-1 ring-tech-accent/30 flex items-center justify-center shadow-inner animate-scale-reveal transition-transform duration-300 group-hover:scale-105">
+                          <service.icon className="w-8 h-8 text-tech-accent" />
+                        </div>
+                        <div>
+                          <h2 className="text-3xl font-bold text-foreground animate-fade-in-up">{service.title}</h2>
+                          <p className="text-tech-accent animate-fade-in-up" style={{ animationDelay: "120ms" }}>{service.subtitle}</p>
+                        </div>
                       </div>
-                      <div className="grid grid-cols-1 lg:grid-cols-2 relative">
-                        <div className="p-8 lg:p-12">
-                          <Reveal animation="scale">
-                            <div className="flex items-center gap-4 mb-6">
-                              <div className="w-16 h-16 bg-tech-accent/10 rounded-2xl ring-1 ring-tech-accent/30 flex items-center justify-center shadow-inner transition-transform duration-300 group-hover:scale-105">
-                                <service.icon className="w-8 h-8 text-tech-accent" />
-                              </div>
-                              <div>
-                                <h2 className="text-3xl font-bold text-foreground">{service.title}</h2>
-                                <p className="text-tech-accent" style={{ animationDelay: "120ms" }}>{service.subtitle}</p>
-                              </div>
-                            </div>
-                          </Reveal>
+                      
+                      <p className="text-muted-foreground mb-8 text-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: "180ms" }}>
+                        {service.description}
+                      </p>
 
-                          <p className="text-muted-foreground mb-8 text-lg leading-relaxed animate-fade-in-up" style={{ animationDelay: "180ms" }}>
-                            {service.description}
-                          </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-2 animate-fade-in-up" style={{ animationDelay: `${idx * 80 + 220}ms` }}>
+                            <CheckCircle className="w-5 h-5 text-tech-accent flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
 
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                            {service.features.map((feature, idx) => (
-                              <div key={idx} className="flex items-center gap-2 animate-fade-in-up" style={{ animationDelay: `${idx * 80 + 220}ms` }}>
-                                <CheckCircle className="w-5 h-5 text-tech-accent flex-shrink-0" />
-                                <span className="text-sm">{feature}</span>
-                              </div>
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <Button variant="cta" size="lg" className="group transition-transform duration-300 hover:scale-[1.02]">
+                          Get Started
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </Button>
+                        <Button variant="minimal" size="lg" className="transition-transform duration-300 hover:scale-[1.02]">
+                          Learn More
+                        </Button>
+                      </div>
+                    </div>
+
+                    <div className="relative bg-muted/50 p-8 lg:p-12 flex flex-col justify-center rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl overflow-hidden">
+                      <div className="pointer-events-none absolute inset-0">
+                        <div className="absolute right-[-20%] top-[-20%] h-64 w-64 rounded-full bg-tech-accent/15 blur-3xl animate-float" />
+                      </div>
+                      <div className="space-y-6 animate-slide-in-right">
+                        <div>
+                          <h4 className="font-semibold mb-2 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-tech-accent" />
+                            Technologies We Use
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {service.technologies.map((tech, idx) => (
+                              <Badge key={idx} variant="secondary" className="transition-transform hover:scale-105">{tech}</Badge>
                             ))}
                           </div>
-
-                          <div className="flex flex-col sm:flex-row gap-4">
-                            <Button variant="cta" size="lg" className="group transition-transform duration-300 hover:scale-[1.02]">
-                              Get Started
-                              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                            </Button>
-                            <Button variant="minimal" size="lg" className="transition-transform duration-300 hover:scale-[1.02]">
-                              Learn More
-                            </Button>
-                          </div>
                         </div>
 
-                        <div className="relative bg-muted/50 p-8 lg:p-12 flex flex-col justify-center rounded-b-3xl lg:rounded-l-none lg:rounded-r-3xl overflow-hidden">
-                          <div className="pointer-events-none absolute inset-0">
-                            <ParallaxBlob speed={-0.2} className="absolute right-[-20%] top-[-20%] h-64 w-64 bg-tech-accent/15 blur-3xl" />
-                          </div>
-                          <div className="mb-6 flex justify-center">
-                            <ServiceLottie src={lottieUrls[service.id]} size={180} />
-                          </div>
-                          <div className="space-y-6 animate-slide-in-right">
-                            <div>
-                              <h4 className="font-semibold mb-2 flex items-center gap-2">
-                                <Zap className="w-5 h-5 text-tech-accent" />
-                                Technologies We Use
-                              </h4>
-                              <div className="flex flex-wrap gap-2">
-                                {service.technologies.map((tech, idx) => (
-                                  <Badge key={idx} variant="secondary" className="transition-transform hover:scale-105">{tech}</Badge>
-                                ))}
-                              </div>
-                            </div>
+                        <div>
+                          <h4 className="font-semibold mb-2 flex items-center gap-2">
+                            <Clock className="w-5 h-5 text-tech-accent" />
+                            Timeline
+                          </h4>
+                          <p className="text-muted-foreground">{service.timeline}</p>
+                        </div>
 
-                            <div>
-                              <h4 className="font-semibold mb-2 flex items-center gap-2">
-                                <Clock className="w-5 h-5 text-tech-accent" />
-                                Timeline
-                              </h4>
-                              <p className="text-muted-foreground">{service.timeline}</p>
-                            </div>
-
-                            <div>
-                              <h4 className="font-semibold mb-2 flex items-center gap-2">
-                                <BarChart3 className="w-5 h-5 text-tech-accent" />
-                                Investment
-                              </h4>
-                              <p className="text-2xl font-bold text-tech-accent">{service.startingPrice}</p>
-                              <p className="text-sm text-muted-foreground">Custom pricing based on your needs</p>
-                            </div>
-                          </div>
+                        <div>
+                          <h4 className="font-semibold mb-2 flex items-center gap-2">
+                            <BarChart3 className="w-5 h-5 text-tech-accent" />
+                            Investment
+                          </h4>
+                          <p className="text-2xl font-bold text-tech-accent">{service.startingPrice}</p>
+                          <p className="text-sm text-muted-foreground">Custom pricing based on your needs</p>
                         </div>
                       </div>
-                    </Card>
-                  </TabsContent>
-                ))}
-              </Tabs>
-            </div>
-
-            <aside className="hidden lg:block lg:col-span-3">
-              <div className="sticky top-28">
-                <div className="rounded-3xl border bg-[hsl(var(--card)/0.6)] backdrop-blur p-6 shadow-card">
-                  <img src={mascotSrc} alt="Razerfast mascot" className="mx-auto h-40 w-40 object-contain transition-transform duration-500" />
-                  <p className="text-sm text-muted-foreground mt-4 text-center">Switch tabs to see me change</p>
-                </div>
-              </div>
-            </aside>
-          </div>
+                    </div>
+                  </div>
+                </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
         </div>
       </section>
 
       {/* Additional Services */}
-      <section className="relative overflow-hidden py-20" style={{ backgroundColor: '#E6D7F0' }}>
-        <AnimatedBlobs />
+      <section className="py-20" style={{ backgroundColor: '#E6D7F0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal animation="fade">
-            <div className="text-center mb-16">
-              <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
-                ADDITIONAL SERVICES
-              </div>
-              <Badge variant="outline" className="mb-4">Additional Services</Badge>
-              <TextReveal text="Supporting Services" className="text-3xl md:text-5xl font-bold text-foreground mb-6" />
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Comprehensive support services to ensure your digital presence is always optimized and performing at its best.
-              </p>
+          <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              ADDITIONAL SERVICES
             </div>
-          </Reveal>
+            <Badge variant="outline" className="mb-4">Additional Services</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              Supporting Services
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive support services to ensure your digital presence is always optimized and performing at its best.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {additionalServices.map((service, index) => (
-              <Card key={index} className="group p-6 rounded-2xl border bg-card/80 backdrop-blur hover:shadow-tech hover:scale-[1.02] transition-all duration-300 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-tech-accent/10 rounded-lg flex items-center justify-center mb-4 animate-scale-reveal" style={{ animationDelay: `${index * 80}ms` }}>
+              <Card key={index} className="p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-tech-accent/10 rounded-lg flex items-center justify-center mb-4">
                   <service.icon className="w-6 h-6 text-tech-accent" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
@@ -394,80 +312,39 @@ const Services = () => {
         </div>
       </section>
 
-      <SectionDividerBlob />
-
-      {/* Metrics */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <Stat end={120} label="Projects Delivered" />
-            <Stat end={180} label="Avg. ROI Increase" suffix="%" />
-            <Stat end={95} label="Avg. PageSpeed" suffix="/100" />
-            <Stat end={98} label="Client Satisfaction" suffix="%" />
-          </div>
-        </div>
-      </section>
-
-      {/* Horizontal Scroller */}
-      <section className="py-16" style={{ backgroundColor: '#E6D7F0' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6">
-            <Badge variant="outline" className="mb-2">Capabilities</Badge>
-            <TextReveal text="Explore Our Capabilities" className="text-2xl md:text-4xl font-bold" />
-          </div>
-          <div className="overflow-x-auto snap-x snap-mandatory -mx-4 px-4">
-            <div className="flex gap-6 w-max">
-              {[...additionalServices, ...additionalServices].map((item, idx) => (
-                <Card key={idx} className="snap-start w-72 p-6 rounded-2xl border bg-[hsl(var(--card)/0.6)] backdrop-blur hover:shadow-tech hover:scale-[1.02] transition-all">
-                  <div className="w-12 h-12 bg-tech-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-tech-accent" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Process Section */}
-      <section className="relative overflow-hidden py-20">
-        <AnimatedBlobs />
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal animation="fade">
-            <div className="text-center mb-16">
-              <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
-                OUR PROCESS
-              </div>
-              <Badge variant="outline" className="mb-4">Our Process</Badge>
-              <TextReveal text="How We Work" className="text-3xl md:text-5xl font-bold text-foreground mb-6" />
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Our proven 6-step process ensures every project is delivered on time, on budget, and exceeds expectations.
-              </p>
+          <div className="text-center mb-16">
+            <div className="text-sm font-semibold tracking-widest text-muted-foreground/70 uppercase mb-4">
+              OUR PROCESS
             </div>
-          </Reveal>
+            <Badge variant="outline" className="mb-4">Our Process</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              How We Work
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Our proven 6-step process ensures every project is delivered on time, on budget, and exceeds expectations.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {process.map((step, index) => (
-              <Reveal key={step.step} animation="slide-up" delay={index * 80}>
-                <Card className="p-6 rounded-2xl border bg-card/80 backdrop-blur hover:shadow-tech hover:scale-[1.02] transition-transform duration-300">
-                  <div className="text-4xl font-bold text-tech-accent/20 mb-4">{step.step}</div>
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm">{step.description}</p>
-                </Card>
-              </Reveal>
+              <Card key={index} className="p-6 hover:shadow-card transition-all duration-300">
+                <div className="text-4xl font-bold text-tech-accent/20 mb-4">{step.step}</div>
+                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                <p className="text-muted-foreground text-sm">{step.description}</p>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden py-20 bg-gradient-hero text-primary-foreground">
-        <AnimatedBlobs className="opacity-40" />
+      <section className="py-20 bg-gradient-hero text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Zap className="w-16 h-16 text-tech-accent mx-auto mb-6" />
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient-animated">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
