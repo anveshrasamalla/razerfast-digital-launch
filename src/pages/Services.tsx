@@ -177,6 +177,8 @@ const Services = () => {
     marketing: "https://cdn.lordicon.com/aklfruoc.json",
   };
 
+  const mascotSrc = mascotByService[activeService] || mascotGlow;
+
   const Stat = ({ end, label, suffix = "" }: { end: number; label: string; suffix?: string }) => {
     const { ref, value } = useCountUp<HTMLDivElement>({ end });
     return (
@@ -349,7 +351,7 @@ const Services = () => {
             <aside className="hidden lg:block lg:col-span-3">
               <div className="sticky top-28">
                 <div className="rounded-3xl border bg-[hsl(var(--card)/0.6)] backdrop-blur p-6 shadow-card">
-                  <img src={mascotByService[activeService]} alt="Razerfast mascot" className="mx-auto h-40 w-40 object-contain transition-transform duration-500" />
+                  <img src={mascotSrc} alt="Razerfast mascot" className="mx-auto h-40 w-40 object-contain transition-transform duration-500" />
                   <p className="text-sm text-muted-foreground mt-4 text-center">Switch tabs to see me change</p>
                 </div>
               </div>
@@ -443,7 +445,7 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {process.map((step, index) => (
-              <Reveal animation="slide-up" delay={index * 80}>
+              <Reveal key={step.step} animation="slide-up" delay={index * 80}>
                 <Card className="p-6 rounded-2xl border bg-card/80 backdrop-blur hover:shadow-tech hover:scale-[1.02] transition-transform duration-300">
                   <div className="text-4xl font-bold text-tech-accent/20 mb-4">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
