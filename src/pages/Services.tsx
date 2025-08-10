@@ -196,16 +196,15 @@ const Services = () => {
           <ServiceGradientBackground activeKey={activeService} />
           <Tabs value={activeService} onValueChange={setActiveService} className="space-y-12 relative">
             <TabsList className="grid grid-cols-1 md:grid-cols-4 w-full h-auto gap-4 bg-transparent">
-              {mainServices.map((service) => (
-                <TabsTrigger
-                  key={service.id}
-                  value={service.id}
-                  className="group relative flex flex-col items-center text-center p-6 rounded-[22px] border bg-card shadow-sm hover:shadow-md transition-transform duration-300 hover:-translate-y-0.5 data-[state=active]:ring-1 data-[state=active]:ring-tech-accent/50 data-[state=active]:bg-background data-[state=active]:shadow-tech"
-                >
-                  <service.icon className="w-8 h-8 mb-2" />
-                  <span className="font-semibold">{service.title}</span>
-                  <span className="text-xs opacity-70">{service.subtitle}</span>
-                </TabsTrigger>
+              {mainServices.map((s) => (
+                <ServiceFlipTrigger
+                  key={s.id}
+                  value={s.id}
+                  title={s.title}
+                  subtitle={s.subtitle}
+                  Icon={s.icon}
+                  lottieUrl={lottieMap[s.id]}
+                />
               ))}
             </TabsList>
 
