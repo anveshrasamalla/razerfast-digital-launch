@@ -416,3 +416,29 @@ All colors MUST be HSL.
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+/* Gradient background subtle motion */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 12s ease infinite;
+}
+
+/* Flip card utilities for Tabs triggers */
+.flip-group { perspective: 1000px; }
+.flip-inner { transform-style: preserve-3d; transition: transform 0.6s var(--transition-smooth); }
+.tabs-trigger-flip:hover .flip-inner,
+.tabs-trigger-flip[data-state="active"] .flip-inner { transform: rotateY(180deg); }
+.flip-face { backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); }
+
+/* Vertical timeline */
+.timeline { position: relative; }
+.timeline::before { content: ""; position: absolute; left: 1rem; top: 0; bottom: 0; width: 2px; background: hsl(var(--tech-accent) / 0.3); }
+.timeline-item { position: relative; padding-left: 3rem; opacity: 0; transform: translateY(10px); transition: var(--transition-smooth); }
+.timeline-item.in-view { opacity: 1; transform: translateY(0); }
+.timeline-dot { position: absolute; left: 0.75rem; top: 0.25rem; width: 1rem; height: 1rem; border-radius: 9999px; background: hsl(var(--tech-accent)); box-shadow: 0 0 0 4px hsl(var(--tech-accent) / 0.15), 0 0 20px hsl(var(--tech-accent) / 0.5); }

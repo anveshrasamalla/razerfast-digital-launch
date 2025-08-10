@@ -18,6 +18,11 @@ import {
   Users
 } from "lucide-react";
 
+import { useState, useMemo } from "react";
+import ServiceGradientBackground from "@/components/effects/ServiceGradientBackground";
+import ServiceFlipTrigger from "@/components/services/ServiceFlipTrigger";
+import AnimatedTimeline from "@/components/services/AnimatedTimeline";
+
 const Services = () => {
   const mainServices = [
     {
@@ -149,6 +154,13 @@ const Services = () => {
       description: "Smooth deployment and launch with ongoing support to ensure your success."
     }
   ];
+  const [activeService, setActiveService] = useState<string>("web");
+  const lottieMap: Record<string, string> = {
+    web: "https://cdn.lordicon.com/lusqsztk.json",
+    ecommerce: "https://cdn.lordicon.com/abvsiyby.json",
+    mobile: "https://cdn.lordicon.com/oezixobx.json",
+    marketing: "https://cdn.lordicon.com/dangdpgv.json",
+  };
 
   return (
     <Layout>
@@ -204,7 +216,7 @@ const Services = () => {
                     <div className="absolute bottom-[-2rem] left-1/3 h-32 w-32 rounded-full bg-primary/10 blur-2xl animate-glow" />
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 relative">
-                    <div className="p-8 lg:p-12">
+                    <div className="p-8 lg:p-12 lg:sticky lg:top-24">
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-16 h-16 bg-tech-accent/10 rounded-2xl ring-1 ring-tech-accent/30 flex items-center justify-center shadow-inner animate-scale-reveal transition-transform duration-300 group-hover:scale-105">
                           <service.icon className="w-8 h-8 text-tech-accent" />
@@ -259,18 +271,18 @@ const Services = () => {
                         <div>
                           <h4 className="font-semibold mb-2 flex items-center gap-2">
                             <Clock className="w-5 h-5 text-tech-accent" />
-                            Timeline
+                            Project Timeline
                           </h4>
-                          <p className="text-muted-foreground">{service.timeline}</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold mb-2 flex items-center gap-2">
-                            <BarChart3 className="w-5 h-5 text-tech-accent" />
-                            Investment
-                          </h4>
-                          <p className="text-2xl font-bold text-tech-accent">{service.startingPrice}</p>
-                          <p className="text-sm text-muted-foreground">Custom pricing based on your needs</p>
+                          <AnimatedTimeline
+                            steps={[
+                              { title: "Plan & Strategy" },
+                              { title: "Design" },
+                              { title: "Build" },
+                              { title: "QA & Iterate" },
+                              { title: `Launch • ${service.timeline}` },
+                              { title: `From ${service.startingPrice}` },
+                            ]}
+                          />
                         </div>
                       </div>
                     </div>
