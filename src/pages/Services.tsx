@@ -27,6 +27,7 @@ import SectionDividerBlob from "@/components/effects/SectionDividerBlob";
 import TextReveal from "@/components/typography/TextReveal";
 import ServiceLottie from "@/components/services/ServiceLottie";
 import useCountUp from "@/hooks/useCountUp";
+import AnimatedBlobs from "@/components/effects/AnimatedBlobs";
 import mascotGlow from "@/assets/logo-neon-glow.png";
 import mascotBolt from "@/assets/logo-lightning-bolt.png";
 import mascotBoom from "@/assets/logo-sonic-boom.png";
@@ -200,6 +201,7 @@ const Services = () => {
       <section className="relative overflow-hidden py-20 lg:py-32" style={{ backgroundColor: '#E6D7F0' }}>
         <ParallaxBlob speed={-0.15} className="absolute -top-10 -right-10 h-56 w-56 bg-tech-accent/20 blur-3xl" />
         <ParallaxBlob speed={0.12} className="absolute bottom-[-2rem] left-1/3 h-32 w-32 bg-primary/10 blur-2xl" />
+        <AnimatedBlobs />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <button
             onClick={() => document.documentElement.classList.toggle('dark')}
@@ -238,7 +240,8 @@ const Services = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-20">
+      <section className="relative overflow-hidden py-20">
+        <AnimatedBlobs />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-9">
@@ -259,7 +262,7 @@ const Services = () => {
 
                 {mainServices.map((service) => (
                   <TabsContent key={service.id} value={service.id} className="mt-12">
-                    <Card className="relative overflow-hidden rounded-3xl border bg-[hsl(var(--card)/0.65)] backdrop-blur-xl shadow-card hover:shadow-tech transition-all duration-500 group transform-gpu hover:scale-[1.01]">
+                    <Card className="relative overflow-hidden rounded-3xl border bg-card shadow-card hover:shadow-tech transition-all duration-500 group transform-gpu hover:scale-[1.01]">
                       {/* Decorative animated accents */}
                       <div className="pointer-events-none absolute inset-0">
                         <div className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-tech-accent/20 blur-3xl animate-float" />
@@ -361,7 +364,8 @@ const Services = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20" style={{ backgroundColor: '#E6D7F0' }}>
+      <section className="relative overflow-hidden py-20" style={{ backgroundColor: '#E6D7F0' }}>
+        <AnimatedBlobs />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal animation="fade">
             <div className="text-center mb-16">
@@ -428,7 +432,8 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20">
+      <section className="relative overflow-hidden py-20">
+        <AnimatedBlobs />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal animation="fade">
             <div className="text-center mb-16">
@@ -458,7 +463,8 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-primary-foreground">
+      <section className="relative overflow-hidden py-20 bg-gradient-hero text-primary-foreground">
+        <AnimatedBlobs className="opacity-40" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Zap className="w-16 h-16 text-tech-accent mx-auto mb-6" />
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient-animated">
