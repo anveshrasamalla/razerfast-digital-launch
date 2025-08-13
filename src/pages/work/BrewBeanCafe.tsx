@@ -8,7 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState, useMemo, useEffect } from "react";
 import { CheckCircle2, Coffee, MapPin, Clock, ShoppingCart, Star, UtensilsCrossed } from "lucide-react";
-import poster from "@/assets/team-collaboration.jpg";
+import heroImage from "@/assets/brewbean-hero.jpg";
+import portfolioImage from "@/assets/brewbean-portfolio-1.jpg";
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState<{days:number;hours:number;minutes:number;seconds:number}>({days:0,hours:0,minutes:0,seconds:0});
   const target = useMemo(() => Date.now() + 7 * 24 * 60 * 60 * 1000, []);
@@ -64,7 +65,7 @@ const BrewBeanCafe = () => {
 
       {/* Hero with video */}
       <header className="relative h-[70vh] md:h-[80vh] isolate">
-        <video className="absolute inset-0 h-full w-full object-cover" src="/videos/cafe-hero.mp4" autoPlay muted loop playsInline poster={poster} />
+        <img className="absolute inset-0 h-full w-full object-cover" src={heroImage} alt="Cafe website design showcase" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 to-background" />
         <div className="relative max-w-7xl mx-auto h-full flex items-center px-4">
           <div className="max-w-2xl animate-fade-in">
@@ -121,16 +122,11 @@ const BrewBeanCafe = () => {
               <p className="text-muted-foreground">Hover to preview different pages. Click to enlarge.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              {[
-                ['/src/assets/case-study-1.jpg','/src/assets/case-study-2.jpg'],
-                ['/src/assets/case-study-3.jpg','/src/assets/case-study-4.jpg'],
-                ['/src/assets/case-study-5.jpg','/src/assets/tech-background.jpg'],
-              ].map(([a,b]) => (
-                <Card key={a} className="overflow-hidden group cursor-zoom-in" onClick={()=>open(a)}>
+              {Array.from({length: 3}).map((_, idx) => (
+                <Card key={idx} className="overflow-hidden group cursor-zoom-in" onClick={()=>open(portfolioImage)}>
                   <CardContent className="p-0">
                     <div className="relative aspect-[4/3]">
-                      <img src={b} alt="Cafe website alt view" className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300" loading="lazy" />
-                      <img src={a} alt="Cafe website main view" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                      <img src={portfolioImage} alt="Cafe website portfolio showcase" className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
                     </div>
                   </CardContent>
                 </Card>
