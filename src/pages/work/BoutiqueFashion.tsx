@@ -8,7 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState, useMemo, useEffect } from "react";
 import { CheckCircle2, ShoppingBag, CreditCard, Percent, Users, Share2, Crown } from "lucide-react";
-import poster from "@/assets/hero-consulting.jpg";
+import poster from "@/assets/boutique-hero.jpg";
+import portfolioImage from "@/assets/boutique-portfolio-1.jpg";
 
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState<{days:number;hours:number;minutes:number;seconds:number}>({days:0,hours:0,minutes:0,seconds:0});
@@ -138,9 +139,9 @@ const BoutiqueFashion = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                ['/src/assets/case-study-1.jpg','/src/assets/case-study-2.jpg'],
-                ['/src/assets/case-study-3.jpg','/src/assets/case-study-4.jpg'],
-                ['/src/assets/case-study-5.jpg','/src/assets/hero-consulting.jpg'],
+                [portfolioImage, poster],
+                [portfolioImage, poster],
+                [portfolioImage, poster],
               ].map(([a,b]) => (
                 <Card key={a} className="overflow-hidden group cursor-zoom-in border-rose-200 hover:border-rose-300 transition-all hover:scale-105 hover:shadow-lg" onClick={()=>open(a)}>
                   <CardContent className="p-0">

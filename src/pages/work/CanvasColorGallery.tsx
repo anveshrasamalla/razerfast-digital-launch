@@ -8,7 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useState, useMemo, useEffect } from "react";
 import { CheckCircle2, Palette, Calendar, ShoppingCart, User, Camera, Paintbrush } from "lucide-react";
-import poster from "@/assets/case-study-5.jpg";
+import poster from "@/assets/canvas-hero.jpg";
+import portfolioImage from "@/assets/canvas-portfolio-1.jpg";
 
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState<{days:number;hours:number;minutes:number;seconds:number}>({days:0,hours:0,minutes:0,seconds:0});
@@ -148,7 +149,7 @@ const CanvasColorGallery = () => {
                 </ul>
               </div>
               <div className="relative">
-                <img src="/src/assets/case-study-5.jpg" alt="Art gallery interface" className="w-full rounded-lg" />
+                <img src={poster} alt="Art gallery interface" className="w-full rounded-lg" />
                 <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-pink-500/20 blur-2xl" aria-hidden />
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-cyan-400/20 blur-3xl" aria-hidden />
               </div>
@@ -166,9 +167,9 @@ const CanvasColorGallery = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                ['/src/assets/case-study-1.jpg','/src/assets/case-study-2.jpg'],
-                ['/src/assets/case-study-3.jpg','/src/assets/case-study-4.jpg'],
-                ['/src/assets/case-study-5.jpg','/src/assets/hero-consulting.jpg'],
+                [portfolioImage, poster],
+                [portfolioImage, poster],
+                [portfolioImage, poster],
               ].map(([a,b]) => (
                 <Card key={a} className="overflow-hidden group cursor-zoom-in bg-white/5 border-white/10 hover:border-cyan-400/50 transition-all hover:scale-105" onClick={()=>open(a)}>
                   <CardContent className="p-0">
