@@ -22,7 +22,8 @@ const Portfolio = () => {
     { id: "automotive", name: "Automotive", icon: Car },
     { id: "cafe", name: "Cafes & Restaurants", icon: Coffee },
     { id: "grocery", name: "Grocery Stores", icon: ShoppingBasket },
-    { id: "art", name: "Art Stores", icon: Palette }
+    { id: "art", name: "Art Stores", icon: Palette },
+    { id: "boutique", name: "Boutiques", icon: Users }
   ];
 
   const projects = [
@@ -121,6 +122,22 @@ const Portfolio = () => {
       technologies: ["React", "Node.js", "MongoDB", "Firebase"],
       timeline: "6 weeks",
       year: "2023"
+    },
+    {
+      id: 7,
+      title: "Chic Boutique",
+      category: "boutique",
+      description: "Luxury e-commerce platform for high-end fashion boutique",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
+      services: ["E-commerce", "Brand Design", "Photography"],
+      results: {
+        sales: "+400%",
+        reach: "+300%",
+        engagement: "+250%"
+      },
+      technologies: ["Shopify Plus", "React", "Klaviyo", "Instagram API"],
+      timeline: "5 weeks",
+      year: "2024"
     }
   ];
 
@@ -135,6 +152,7 @@ const Portfolio = () => {
       "Brew & Bean Cafe": "/work/brew-bean-cafe",
       "Fresh Valley Market": "/work/fresh-valley-market",
       "Canvas & Color Gallery": "/work/canvas-color-gallery",
+      "Chic Boutique": "/work/boutique-fashion",
     };
     return map[title] ?? null;
   };

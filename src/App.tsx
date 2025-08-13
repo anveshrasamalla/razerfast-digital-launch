@@ -16,6 +16,7 @@ import AutomaxPro from "./pages/work/AutomaxPro";
 import BrewBeanCafe from "./pages/work/BrewBeanCafe";
 import FreshValleyMarket from "./pages/work/FreshValleyMarket";
 import CanvasColorGallery from "./pages/work/CanvasColorGallery";
+import BoutiqueFashion from "./pages/work/BoutiqueFashion";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/work/brew-bean-cafe" element={<BrewBeanCafe />} />
             <Route path="/work/fresh-valley-market" element={<FreshValleyMarket />} />
             <Route path="/work/canvas-color-gallery" element={<CanvasColorGallery />} />
+            <Route path="/work/boutique-fashion" element={<BoutiqueFashion />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
