@@ -15,7 +15,7 @@ import {
   Globe,
   Smartphone
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const Portfolio = () => {
   const industries = [
     { id: "all", name: "All Projects", icon: Globe },
@@ -127,6 +127,16 @@ const Portfolio = () => {
   const filterProjects = (category: string) => {
     if (category === "all") return projects;
     return projects.filter(project => project.category === category);
+  };
+
+  const getCaseStudyPath = (title: string): string | null => {
+    const map: Record<string, string> = {
+      "AutoMax Pro": "/work/automax-pro",
+      "Brew & Bean Cafe": "/work/brew-bean-cafe",
+      "Fresh Valley Market": "/work/fresh-valley-market",
+      "Canvas & Color Gallery": "/work/canvas-color-gallery",
+    };
+    return map[title] ?? null;
   };
 
   const stats = [
@@ -260,10 +270,14 @@ const Portfolio = () => {
                           </div>
                         </div>
 
-                        <Button variant="minimal" className="group mt-6">
-                          View Case Study
-                          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                        </Button>
+                        {getCaseStudyPath(project.title) ? (
+                          <Link to={getCaseStudyPath(project.title)!} aria-label={`View case study: ${project.title}`}>
+                            <Button variant="minimal" className="group mt-6">
+                              View Case Study
+                              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Button>
+                          </Link>
+                        ) : null}
                       </div>
 
                       {/* Project Image */}
