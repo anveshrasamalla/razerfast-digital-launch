@@ -75,26 +75,15 @@ const Index = () => {
       {/* Who We Are Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase mb-4">
-                WHO WE ARE
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-6 leading-tight">
-                We are <span className="font-medium">Razerfast</span><br className="hidden sm:block" />
-                an award-winning web design agency focused on fostering relationships & work culture<br className="hidden lg:block" />
-                to deliver world-class digital products.
-              </h2>
+          <div className="max-w-4xl">
+            <div className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase mb-4">
+              WHO WE ARE
             </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center">
-                  <Star className="w-5 h-5 text-white fill-white" />
-                </div>
-                <span className="text-white text-xl font-medium">4.9</span>
-              </div>
-              <p className="text-white/60">51 reviews</p>
-            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-6 leading-tight">
+              We are <span className="font-medium">Razerfast</span><br className="hidden sm:block" />
+              an award-winning web design agency focused on fostering relationships & work culture<br className="hidden lg:block" />
+              to deliver world-class digital products.
+            </h2>
           </div>
         </div>
       </section>
