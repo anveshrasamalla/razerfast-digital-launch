@@ -44,10 +44,10 @@ const CanvasColorGallery = () => {
   const close = () => setLightboxSrc(null);
 
   const artworks = [
-    '/src/assets/case-study-1.jpg',
-    '/src/assets/case-study-2.jpg', 
-    '/src/assets/case-study-3.jpg',
-    '/src/assets/case-study-4.jpg'
+    '/src/assets/artwork-1.jpg',
+    '/src/assets/artwork-2.jpg', 
+    '/src/assets/artwork-3.jpg',
+    '/src/assets/artwork-4.jpg'
   ];
 
   useEffect(() => {
