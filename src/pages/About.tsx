@@ -110,9 +110,7 @@ const About = () => {
         </div>
 
         {/* Hero Section */}
-        <section className="py-20 lg:py-32 relative" style={{
-        backgroundColor: '#A8C4B5'
-      }}>
+        <section className="py-20 lg:py-32 relative bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 animate-fade-in">
@@ -203,9 +201,7 @@ const About = () => {
         </section>
 
         {/* Redesigned Journey Section */}
-        <section className="py-20 relative" style={{
-        backgroundColor: '#A8C4B5'
-      }}>
+        <section className="py-20 relative bg-secondary">
           <div className="absolute inset-0 bg-gradient-to-br from-background/30 to-transparent"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="text-center mb-16 animate-fade-in">

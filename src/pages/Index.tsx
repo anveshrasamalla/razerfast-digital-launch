@@ -27,14 +27,8 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return <Layout>
-      <style>
-        {`.min-h-screen { background: #F5F4F1 !important; }`}
-      </style>
-
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{
-      backgroundColor: "#F5F4F1"
-    }}>
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-6xl mx-auto text-center">
           {/* Small subtitle */}
           <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-12">
@@ -57,7 +51,7 @@ const Index = () => {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F5F4F1" }}>
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-6xl mx-auto text-center">
           <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-8">
             TRUSTED BY
@@ -73,7 +67,7 @@ const Index = () => {
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-4xl">
             <div className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase mb-4">
@@ -89,7 +83,7 @@ const Index = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground relative overflow-hidden">
         {/* Parallax Background Elements */}
         <div 
           className="absolute inset-0 opacity-5"
@@ -251,7 +245,7 @@ const Index = () => {
       </section>
 
       {/* Products & Services Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#F5F4F1" }}>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="text-sm font-medium tracking-[0.2em] text-muted-foreground/70 uppercase mb-4">
@@ -331,7 +325,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="text-sm font-medium tracking-[0.2em] text-white/60 uppercase mb-4">
