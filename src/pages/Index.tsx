@@ -57,7 +57,7 @@ const Index = () => {
             TRUSTED BY
           </div>
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8 opacity-60">
-            <div className="font-bold text-lg sm:text-xl lg:text-2xl">APOLLO</div>
+            <div className="font-bold text-lg sm:text-xl lg:text-2xl">GiggleMug</div>
             <div className="font-bold text-lg sm:text-xl lg:text-2xl">Jägermeister</div>
             <div className="font-bold text-lg sm:text-xl lg:text-2xl">THE EXPLORERS CLUB</div>
             <div className="font-bold text-lg sm:text-xl lg:text-2xl">Huddly</div>
@@ -156,7 +156,7 @@ const Index = () => {
               </div>
               <h3 className="text-lg sm:text-xl font-medium text-white mb-2 transition-colors duration-300 group-hover:text-purple-400">
                 Enhanced electric scooter experience with an innovative mobile app
-              </h3>
+              </h3>tri
               <p className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Case study →</p>
             </div>
           </div>
