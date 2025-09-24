@@ -152,15 +152,8 @@ const Services = () => {
 
   return (
     <Layout>
-      <style>
-        {`
-          .services-hero { background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%); }
-          .services-bg { background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)/0.3) 100%); }
-          .process-bg { background: linear-gradient(135deg, hsl(var(--muted)/0.5) 0%, hsl(var(--background)) 100%); }
-        `}
-      </style>
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 services-hero relative overflow-hidden">
+      <section className="py-20 lg:py-32 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-tech-accent/5 via-transparent to-primary/5" />
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-tech-accent/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary/10 rounded-full blur-3xl" />
@@ -185,7 +178,7 @@ const Services = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-20 services-bg">
+      <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="web" className="space-y-12">
             <TabsList className="grid grid-cols-1 md:grid-cols-4 w-full h-auto gap-4 bg-transparent">
@@ -193,7 +186,7 @@ const Services = () => {
                 <TabsTrigger
                   key={service.id}
                   value={service.id}
-                  className="flex flex-col items-center p-6 rounded-xl border bg-card hover:bg-muted/50 transition-all duration-300 data-[state=active]:bg-gradient-to-br data-[state=active]:from-tech-accent data-[state=active]:to-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg hover-scale"
+                  className="flex flex-col items-center p-6 rounded-xl border bg-card hover:bg-muted/50 transition-all duration-300 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-lg hover-scale"
                 >
                   <service.icon className="w-8 h-8 mb-2" />
                   <span className="font-semibold">{service.title}</span>
@@ -204,11 +197,11 @@ const Services = () => {
 
             {mainServices.map((service) => (
               <TabsContent key={service.id} value={service.id} className="mt-12">
-                <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-card to-muted/30">
+                <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-0 bg-card">
                   <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className="p-8 lg:p-12">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-br from-tech-accent/20 to-primary/20 rounded-xl flex items-center justify-center shadow-lg">
+                        <div className="w-16 h-16 bg-tech-accent/10 rounded-xl flex items-center justify-center shadow-lg">
                           <service.icon className="w-8 h-8 text-tech-accent" />
                         </div>
                         <div>
@@ -231,17 +224,17 @@ const Services = () => {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-4">
-                        <Button variant="cta" size="lg" className="group">
+                        <Button variant="default" size="lg" className="group">
                           Get Started
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
-                        <Button variant="minimal" size="lg">
+                        <Button variant="outline" size="lg">
                           Learn More
                         </Button>
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-muted/50 to-muted/20 p-8 lg:p-12 flex flex-col justify-center border-l border-border/50">
+                    <div className="bg-muted/50 p-8 lg:p-12 flex flex-col justify-center border-l border-border/50">
                       <div className="space-y-6">
                         <div>
                           <h4 className="font-semibold mb-2 flex items-center gap-2">
@@ -263,12 +256,12 @@ const Services = () => {
                           <p className="text-muted-foreground font-medium">{service.timeline}</p>
                         </div>
 
-                        <div className="bg-gradient-to-r from-tech-accent/5 to-primary/5 p-4 rounded-lg border border-tech-accent/20">
+                        <div className="bg-tech-accent/5 p-4 rounded-lg border border-tech-accent/20">
                           <h4 className="font-semibold mb-2 flex items-center gap-2">
                             <BarChart3 className="w-5 h-5 text-tech-accent" />
                             Investment
                           </h4>
-                          <p className="text-2xl font-bold bg-gradient-to-r from-tech-accent to-primary bg-clip-text text-transparent">{service.startingPrice}</p>
+                          <p className="text-2xl font-bold text-primary">{service.startingPrice}</p>
                           <p className="text-sm text-muted-foreground">Custom pricing based on your needs</p>
                         </div>
                       </div>
@@ -282,7 +275,7 @@ const Services = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-20 bg-secondary/30 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-tech-accent/5 via-primary/5 to-tech-accent/5" />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-tech-accent/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
@@ -294,7 +287,7 @@ const Services = () => {
             </div>
             <Badge variant="outline" className="mb-4 border-tech-accent/20 text-tech-accent bg-tech-accent/5">Additional Services</Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              <span className="bg-gradient-to-r from-tech-accent to-primary bg-clip-text text-transparent">Supporting</span> Services
+              <span className="text-tech-accent">Supporting</span> Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Comprehensive support services to ensure your digital presence is always optimized and performing at its best.
@@ -303,8 +296,8 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {additionalServices.map((service, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-gradient-to-br from-card to-muted/20 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-tech-accent/20 to-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 bg-card group">
+                <div className="w-12 h-12 bg-tech-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-6 h-6 text-tech-accent" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-tech-accent transition-colors duration-300">{service.title}</h3>
@@ -316,7 +309,7 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 process-bg">
+      <section className="py-20 bg-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="text-sm font-semibold tracking-widest text-tech-accent uppercase mb-4">
@@ -324,7 +317,7 @@ const Services = () => {
             </div>
             <Badge variant="outline" className="mb-4 border-tech-accent/20 text-tech-accent bg-tech-accent/5">Our Process</Badge>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              How We <span className="bg-gradient-to-r from-tech-accent to-primary bg-clip-text text-transparent">Work</span>
+              How We <span className="text-tech-accent">Work</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our proven 6-step process ensures every project is delivered on time, on budget, and exceeds expectations.
@@ -333,8 +326,8 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {process.map((step, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-gradient-to-br from-card to-muted/10 group">
-                <div className="text-4xl font-bold bg-gradient-to-r from-tech-accent/30 to-primary/30 bg-clip-text text-transparent mb-4 group-hover:from-tech-accent group-hover:to-primary transition-all duration-300">{step.step}</div>
+              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-card group">
+                <div className="text-4xl font-bold text-tech-accent/60 mb-4 group-hover:text-tech-accent transition-all duration-300">{step.step}</div>
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-tech-accent transition-colors duration-300">{step.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
               </Card>
@@ -344,7 +337,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-primary-foreground">
+      <section className="py-20 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Zap className="w-16 h-16 text-tech-accent mx-auto mb-6" />
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -354,11 +347,11 @@ const Services = () => {
             Let's discuss your project and create a custom solution that fits your business needs and budget.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="cta" size="xl" className="group">
+            <Button variant="secondary" size="xl" className="group">
               Request Free Quote
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
-            <Button variant="minimal" size="xl">
+            <Button variant="outline" size="xl">
               Call (555) 123-4567
             </Button>
           </div>
