@@ -58,10 +58,10 @@ const Index = () => {
           </div>
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8 opacity-60">
             <div className="font-bold text-lg sm:text-xl lg:text-2xl">GiggleMug</div>
-            <div className="font-bold text-lg sm:text-xl lg:text-2xl">Jägermeister</div>
-            <div className="font-bold text-lg sm:text-xl lg:text-2xl">THE EXPLORERS CLUB</div>
-            <div className="font-bold text-lg sm:text-xl lg:text-2xl">Huddly</div>
-            <div className="font-bold text-lg sm:text-xl lg:text-2xl">Pathlock</div>
+            <div className="font-bold text-lg sm:text-xl lg:text-2xl">AutoMax Pro</div>
+            <div className="font-bold text-lg sm:text-xl lg:text-2xl">Co-Fly</div>
+            <div className="font-bold text-lg sm:text-xl lg:text-2xl">Brew & Bean Cafe</div>
+            <div className="font-bold text-lg sm:text-xl lg:text-2xl">CoWorker</div>
           </div>
         </div>
       </section>
