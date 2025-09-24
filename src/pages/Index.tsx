@@ -470,7 +470,7 @@ const Index = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-8 lg:mb-12 leading-tight">
             Let's build or improve your digital product
           </h2>
-          <Button size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg rounded-full">
+          <Button size="lg" className="bg-white text-black hover:bg-white/90 hover:text-black px-8 py-4 text-lg rounded-full font-semibold">
             Schedule a Call
           </Button>
         </div>

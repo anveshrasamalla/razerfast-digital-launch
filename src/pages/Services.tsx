@@ -351,7 +351,7 @@ const Services = () => {
               Request Free Quote
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
-            <Button variant="outline" size="xl">
+            <Button variant="outline" size="xl" className="border-white/50 text-white hover:bg-white/10 hover:border-white">
               Call (555) 123-4567
             </Button>
           </div>

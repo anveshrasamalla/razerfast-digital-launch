@@ -259,7 +259,7 @@ const About = () => {
                   Start Your Project
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                 </Button>
-                <Button variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground hover:scale-105 transition-all duration-300">
+                <Button variant="outline" size="xl" className="border-white/50 text-white hover:bg-white/10 hover:border-white hover:scale-105 transition-all duration-300">
                   Schedule a Call
                 </Button>
               </div>
